@@ -1,0 +1,513 @@
+2022-06-25 00:47:38,498 [INFO] [Rover] Rover starting up...
+2022-06-25 00:47:38,570 [INFO] [Communicaition] Connected
+2022-06-25 00:47:38,962 [INFO] [Movement] Movment Enabled
+2022-06-25 00:47:51,409 [INFO] [Rover] Rover starting up...
+2022-06-25 00:47:51,467 [INFO] [Communicaition] Connected
+2022-06-25 00:47:51,809 [INFO] [Movement] Movment Enabled
+2022-06-25 00:49:06,862 [INFO] [Rover] Rover starting up...
+2022-06-25 00:49:06,920 [INFO] [Communicaition] Connected
+2022-06-25 00:49:07,257 [INFO] [Movement] Movment Enabled
+2022-06-25 00:49:07,277 [INFO] [Arm] Arm Enabled
+2022-06-25 00:49:07,279 [INFO] [Arm] Arm set to default position
+2022-06-25 00:49:07,293 [INFO] [Arm] Arm Disabled
+2022-06-25 00:49:07,316 [INFO] [Rover] Rover start up complete
+2022-06-25 00:49:07,325 [ERROR] [Sensors] Unable to decode sensor data
+2022-06-25 00:49:07,351 [ERROR] [Sensors] Unable to decode sensor data
+2022-06-25 00:49:51,429 [INFO] [Movement] Movment Disabled
+2022-06-25 00:49:52,520 [INFO] [Movement] Movment Enabled
+2022-06-25 00:49:53,325 [INFO] [Movement] Movment Disabled
+2022-06-25 00:49:54,090 [INFO] [Movement] Movment Enabled
+2022-06-25 00:49:54,692 [INFO] [Movement] Movment Disabled
+2022-06-25 00:51:07,056 [INFO] [Camera] Removed streaming client ('192.168.1.22', 53032): [Errno 32] Broken pipe
+2022-06-25 00:51:28,948 [INFO] [Camera] Removed streaming client ('192.168.1.22', 53076): [Errno 32] Broken pipe
+2022-06-25 00:51:42,102 [INFO] [Camera] Removed streaming client ('192.168.1.22', 53089): [Errno 32] Broken pipe
+2022-06-25 00:52:14,790 [INFO] [Camera] Removed streaming client ('192.168.1.22', 53106): [Errno 32] Broken pipe
+2022-06-25 00:53:02,298 [INFO] [Camera] Removed streaming client ('192.168.1.22', 53222): [Errno 32] Broken pipe
+2022-06-25 00:53:17,288 [INFO] [Camera] Removed streaming client ('192.168.1.22', 50136): [Errno 32] Broken pipe
+2022-06-25 00:53:42,773 [INFO] [Camera] Removed streaming client ('192.168.1.22', 50152): [Errno 32] Broken pipe
+2022-06-25 00:53:50,369 [INFO] [Camera] Removed streaming client ('192.168.1.22', 50171): [Errno 32] Broken pipe
+2022-06-25 00:54:15,193 [INFO] [Camera] Removed streaming client ('192.168.1.22', 50182): [Errno 32] Broken pipe
+2022-06-25 00:54:51,886 [INFO] [Movement] Movment Enabled
+2022-06-25 00:55:08,947 [INFO] [Movement] Movment Disabled
+2022-06-25 00:55:10,152 [INFO] [Movement] Movment Enabled
+2022-06-25 00:55:11,115 [INFO] [Movement] Movment Disabled
+2022-06-25 00:55:11,894 [INFO] [Movement] Movment Enabled
+2022-06-25 00:55:13,654 [INFO] [Movement] Movment Disabled
+2022-06-25 00:55:15,870 [INFO] [Movement] Movment Enabled
+2022-06-25 00:55:16,774 [INFO] [Movement] Movment Disabled
+2022-06-25 00:55:17,437 [INFO] [Movement] Movment Enabled
+2022-06-25 00:55:19,610 [INFO] [Movement] Movment Disabled
+2022-06-25 00:55:27,588 [INFO] [Movement] Movment Enabled
+2022-06-25 00:55:36,206 [INFO] [Movement] Movment Disabled
+2022-06-25 00:55:38,127 [INFO] [Movement] Movment Enabled
+2022-06-25 00:55:38,911 [INFO] [Movement] Movment Disabled
+2022-06-25 00:55:39,532 [INFO] [Movement] Movment Enabled
+2022-06-25 00:55:44,628 [INFO] [Movement] Movment Disabled
+2022-06-25 00:57:28,121 [INFO] [Camera] Removed streaming client ('192.168.1.22', 50197): [Errno 32] Broken pipe
+2022-06-25 00:57:40,017 [INFO] [Camera] Removed streaming client ('192.168.1.22', 50266): [Errno 32] Broken pipe
+2022-06-25 00:57:46,311 [INFO] [Camera] Removed streaming client ('192.168.1.22', 50279): [Errno 32] Broken pipe
+2022-06-25 00:57:53,298 [INFO] [Movement] Movment Enabled
+2022-06-25 00:57:54,793 [INFO] [Movement] Movment Disabled
+2022-06-25 00:58:31,790 [INFO] [Camera] Removed streaming client ('192.168.1.22', 50293): [Errno 32] Broken pipe
+2022-06-25 00:58:35,721 [INFO] [Movement] Movment Enabled
+2022-06-25 00:58:40,815 [INFO] [Camera] Removed streaming client ('192.168.1.22', 50308): [Errno 32] Broken pipe
+2022-06-25 00:58:43,759 [INFO] [Movement] Movment Disabled
+2022-06-25 00:58:45,587 [INFO] [Movement] Movment Enabled
+2022-06-25 00:59:46,750 [INFO] [Camera] Removed streaming client ('192.168.1.22', 50323): [Errno 32] Broken pipe
+2022-06-25 01:00:09,205 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51263): [Errno 32] Broken pipe
+2022-06-25 01:00:43,217 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51280): [Errno 32] Broken pipe
+2022-06-25 01:00:51,916 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51297): [Errno 32] Broken pipe
+2022-06-25 01:01:04,215 [INFO] [Movement] Movment Disabled
+2022-06-25 01:01:23,437 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51308): [Errno 32] Broken pipe
+2022-06-25 01:01:31,593 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51332): [Errno 32] Broken pipe
+2022-06-25 01:01:38,613 [INFO] [Movement] Movment Enabled
+2022-06-25 01:01:40,452 [INFO] [Movement] Movment Disabled
+2022-06-25 01:01:42,454 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51343): [Errno 32] Broken pipe
+2022-06-25 01:01:44,850 [INFO] [Movement] Movment Enabled
+2022-06-25 01:01:47,880 [INFO] [Movement] Movment Disabled
+2022-06-25 01:01:52,214 [INFO] [Movement] Movment Enabled
+2022-06-25 01:01:55,864 [INFO] [Movement] Movment Disabled
+2022-06-25 01:01:57,681 [INFO] [Movement] Movment Enabled
+2022-06-25 01:02:40,256 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51358): [Errno 32] Broken pipe
+2022-06-25 01:03:49,119 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51375): [Errno 32] Broken pipe
+2022-06-25 01:05:11,311 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51410): [Errno 32] Broken pipe
+2022-06-25 01:05:32,196 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51437): [Errno 32] Broken pipe
+2022-06-25 01:05:59,451 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51452): [Errno 32] Broken pipe
+2022-06-25 01:06:48,558 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51467): [Errno 32] Broken pipe
+2022-06-25 01:07:49,494 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51489): [Errno 32] Broken pipe
+2022-06-25 01:08:10,015 [INFO] [Movement] Movment Disabled
+2022-06-25 01:08:13,130 [INFO] [Movement] Movment Enabled
+2022-06-25 01:13:52,836 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51513): [Errno 32] Broken pipe
+2022-06-25 01:14:10,026 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51604): [Errno 32] Broken pipe
+2022-06-25 01:15:20,657 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51615): [Errno 32] Broken pipe
+2022-06-25 01:17:05,637 [INFO] [Rover] Rover starting up...
+2022-06-25 01:17:05,688 [INFO] [Communicaition] Connected
+2022-06-25 01:17:06,022 [INFO] [Movement] Movment Enabled
+2022-06-25 01:17:06,039 [INFO] [Arm] Arm Enabled
+2022-06-25 01:17:06,042 [INFO] [Arm] Arm set to default position
+2022-06-25 01:17:06,062 [INFO] [Arm] Arm Disabled
+2022-06-25 01:17:06,072 [INFO] [Rover] Rover start up complete
+2022-06-25 01:18:25,159 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51676): [Errno 32] Broken pipe
+2022-06-25 01:22:16,272 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51691): [Errno 32] Broken pipe
+2022-06-25 01:22:23,234 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51776): [Errno 32] Broken pipe
+2022-06-25 01:23:35,660 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51786): [Errno 32] Broken pipe
+2022-06-25 01:24:02,283 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51811): [Errno 32] Broken pipe
+2022-06-25 01:24:17,239 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51826): [Errno 32] Broken pipe
+2022-06-25 01:24:47,354 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51842): [Errno 32] Broken pipe
+2022-06-25 01:26:08,450 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51853): [Errno 32] Broken pipe
+2022-06-25 01:26:57,354 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51886): [Errno 32] Broken pipe
+2022-06-25 01:27:38,302 [INFO] [Camera] Removed streaming client ('192.168.1.22', 51904): [Errno 32] Broken pipe
+2022-06-25 01:28:25,734 [INFO] [Movement] Movment Disabled
+2022-06-25 01:28:34,708 [INFO] [Movement] Movment Enabled
+2022-06-25 01:28:43,298 [INFO] [Camera] Removed streaming client ('192.168.1.22', 52426): [Errno 32] Broken pipe
+2022-06-25 01:28:57,460 [INFO] [Camera] Removed streaming client ('192.168.1.22', 52455): [Errno 32] Broken pipe
+2022-06-25 01:29:47,999 [INFO] [Camera] Removed streaming client ('192.168.1.22', 52469): [Errno 32] Broken pipe
+2022-06-25 01:30:09,156 [INFO] [Camera] Removed streaming client ('192.168.1.22', 52488): [Errno 32] Broken pipe
+2022-06-25 01:31:50,716 [INFO] [Movement] Movment Disabled
+2022-06-25 01:31:51,760 [INFO] [Movement] Movment Enabled
+2022-06-25 01:31:52,315 [INFO] [Movement] Movment Disabled
+2022-06-25 01:31:52,948 [INFO] [Movement] Movment Enabled
+2022-06-25 01:31:53,413 [INFO] [Movement] Movment Disabled
+2022-06-25 01:31:54,159 [INFO] [Movement] Movment Enabled
+2022-06-25 01:31:54,570 [INFO] [Movement] Movment Disabled
+2022-06-25 01:31:56,867 [INFO] [Movement] Movment Enabled
+2022-06-25 01:31:57,678 [INFO] [Movement] Movment Disabled
+2022-06-25 01:32:00,462 [INFO] [Movement] Movment Enabled
+2022-06-25 01:32:43,930 [WARNING] [Communicaition] Disconnected
+2022-06-25 01:32:48,502 [INFO] [Camera] Removed streaming client ('192.168.1.22', 52508): [Errno 32] Broken pipe
+2022-06-25 01:32:51,777 [INFO] [Communicaition] Connected
+2022-06-25 01:32:51,813 [INFO] [Communicaition] Cleared bufferd items
+2022-06-25 01:32:54,166 [INFO] [Movement] Movment Enabled
+2022-06-25 01:32:54,671 [INFO] [Movement] Movment Disabled
+2022-06-25 01:32:54,852 [INFO] [Movement] Movment Enabled
+2022-06-25 01:32:55,028 [INFO] [Movement] Movment Disabled
+2022-06-25 01:32:55,209 [INFO] [Movement] Movment Enabled
+2022-06-25 01:32:55,387 [INFO] [Movement] Movment Disabled
+2022-06-25 01:32:55,557 [INFO] [Movement] Movment Enabled
+2022-06-25 01:32:55,700 [INFO] [Movement] Movment Disabled
+2022-06-25 01:32:55,872 [INFO] [Movement] Movment Enabled
+2022-06-25 01:32:56,044 [INFO] [Movement] Movment Disabled
+2022-06-25 01:32:56,263 [INFO] [Movement] Movment Enabled
+2022-06-25 01:32:56,797 [INFO] [Movement] Movment Disabled
+2022-06-25 01:32:57,542 [INFO] [Movement] Movment Enabled
+2022-06-25 01:32:57,961 [INFO] [Movement] Movment Disabled
+2022-06-25 01:32:58,569 [INFO] [Movement] Movment Enabled
+2022-06-25 01:33:11,924 [INFO] [Movement] Movment Disabled
+2022-06-25 01:33:12,094 [INFO] [Movement] Movment Enabled
+2022-06-25 01:33:12,264 [INFO] [Movement] Movment Disabled
+2022-06-25 01:33:12,436 [INFO] [Movement] Movment Enabled
+2022-06-25 01:33:12,604 [INFO] [Movement] Movment Disabled
+2022-06-25 01:33:12,775 [INFO] [Movement] Movment Enabled
+2022-06-25 01:33:12,949 [INFO] [Movement] Movment Disabled
+2022-06-25 01:33:13,137 [INFO] [Movement] Movment Enabled
+2022-06-25 01:33:13,315 [INFO] [Movement] Movment Disabled
+2022-06-25 01:33:13,619 [INFO] [Movement] Movment Enabled
+2022-06-25 01:33:13,804 [INFO] [Movement] Movment Disabled
+2022-06-25 01:33:13,973 [INFO] [Movement] Movment Enabled
+2022-06-25 01:35:17,867 [WARNING] [Communicaition] Disconnected
+2022-06-25 01:35:22,825 [INFO] [Camera] Removed streaming client ('192.168.1.22', 52550): [Errno 32] Broken pipe
+2022-06-25 01:35:22,973 [INFO] [Communicaition] Connected
+2022-06-25 01:35:23,025 [INFO] [Communicaition] Cleared bufferd items
+2022-06-25 01:35:36,748 [INFO] [Movement] Movment Enabled
+2022-06-25 01:35:37,484 [INFO] [Movement] Movment Disabled
+2022-06-25 01:35:38,710 [INFO] [Movement] Movment Enabled
+2022-06-25 01:35:39,666 [INFO] [Movement] Movment Disabled
+2022-06-25 01:35:42,898 [INFO] [Movement] Movment Enabled
+2022-06-25 01:35:45,277 [INFO] [Camera] Removed streaming client ('192.168.1.22', 59851): [Errno 32] Broken pipe
+2022-06-25 01:35:48,303 [WARNING] [Communicaition] Disconnected
+2022-06-25 01:35:49,736 [INFO] [Communicaition] Connected
+2022-06-25 01:35:49,752 [INFO] [Communicaition] Cleared bufferd items
+2022-06-25 01:35:59,316 [INFO] [Movement] Movment Disabled
+2022-06-25 01:36:01,601 [INFO] [Camera] Removed streaming client ('192.168.1.22', 59866): [Errno 32] Broken pipe
+2022-06-25 01:36:06,643 [WARNING] [Communicaition] Disconnected
+2022-06-25 01:36:09,299 [INFO] [Camera] Removed streaming client ('192.168.1.22', 59887): [Errno 32] Broken pipe
+2022-06-25 01:36:11,154 [INFO] [Communicaition] Connected
+2022-06-25 01:36:11,167 [INFO] [Communicaition] Cleared bufferd items
+2022-06-25 01:36:16,171 [INFO] [Movement] Movment Enabled
+2022-06-25 01:36:19,420 [INFO] [Movement] Movment Disabled
+2022-06-25 01:36:23,533 [WARNING] [Communicaition] Disconnected
+2022-06-25 01:36:25,579 [INFO] [Communicaition] Connected
+2022-06-25 01:36:25,588 [INFO] [Communicaition] Cleared bufferd items
+2022-06-25 01:36:28,428 [INFO] [Camera] Removed streaming client ('192.168.1.22', 59900): [Errno 32] Broken pipe
+2022-06-25 01:36:50,344 [INFO] [Camera] Removed streaming client ('192.168.1.22', 59936): [Errno 32] Broken pipe
+2022-06-25 01:36:57,546 [INFO] [Movement] Movment Enabled
+2022-06-25 01:37:10,733 [INFO] [Camera] Removed streaming client ('192.168.1.22', 59950): [Errno 32] Broken pipe
+2022-06-25 01:37:35,853 [INFO] [Camera] Removed streaming client ('192.168.1.22', 59967): [Errno 32] Broken pipe
+2022-06-25 01:37:49,837 [INFO] [Rover] Rover starting up...
+2022-06-25 01:37:49,882 [INFO] [Communicaition] Connected
+2022-06-25 01:37:50,194 [INFO] [Movement] Movment Enabled
+2022-06-25 01:37:50,214 [INFO] [Arm] Arm Enabled
+2022-06-25 01:37:50,216 [INFO] [Arm] Arm set to default position
+2022-06-25 01:37:50,234 [INFO] [Arm] Arm Disabled
+2022-06-25 01:37:50,243 [INFO] [Rover] Rover start up complete
+2022-06-25 01:37:51,245 [ERROR] [Sensors] Unable to decode sensor data
+2022-06-25 01:38:15,796 [INFO] [Movement] Movment Disabled
+2022-06-25 01:38:18,158 [INFO] [Movement] Movment Enabled
+2022-06-25 01:38:21,311 [INFO] [Movement] Movment Disabled
+2022-06-25 01:38:48,264 [INFO] [Movement] Movment Enabled
+2022-06-25 01:39:51,925 [INFO] [Camera] Removed streaming client ('192.168.1.22', 59994): [Errno 32] Broken pipe
+2022-06-25 01:40:09,050 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60046): [Errno 32] Broken pipe
+2022-06-25 01:40:12,607 [INFO] [Movement] Movment Disabled
+2022-06-25 01:40:14,488 [INFO] [Movement] Movment Enabled
+2022-06-25 01:41:57,190 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60057): [Errno 32] Broken pipe
+2022-06-25 01:42:32,620 [INFO] [Movement] Movment Disabled
+2022-06-25 01:42:33,399 [INFO] [Movement] Movment Enabled
+2022-06-25 01:42:54,593 [INFO] [Movement] Movment Disabled
+2022-06-25 01:42:55,924 [INFO] [Movement] Movment Enabled
+2022-06-25 01:43:31,936 [INFO] [Movement] Movment Disabled
+2022-06-25 01:43:33,628 [INFO] [Movement] Movment Enabled
+2022-06-25 01:43:34,520 [INFO] [Movement] Movment Disabled
+2022-06-25 01:43:35,254 [INFO] [Movement] Movment Enabled
+2022-06-25 01:43:37,355 [INFO] [Movement] Movment Disabled
+2022-06-25 01:43:38,159 [INFO] [Movement] Movment Enabled
+2022-06-25 01:43:41,167 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60093): [Errno 32] Broken pipe
+2022-06-25 01:43:54,942 [INFO] [Rover] Rover starting up...
+2022-06-25 01:43:54,991 [INFO] [Communicaition] Connected
+2022-06-25 01:43:55,343 [INFO] [Movement] Movment Enabled
+2022-06-25 01:43:55,363 [INFO] [Arm] Arm Enabled
+2022-06-25 01:43:55,366 [INFO] [Arm] Arm set to default position
+2022-06-25 01:43:55,379 [INFO] [Arm] Arm Disabled
+2022-06-25 01:43:55,385 [INFO] [Rover] Rover start up complete
+2022-06-25 01:44:01,709 [WARNING] [Communicaition] Disconnected
+2022-06-25 01:44:03,366 [INFO] [Communicaition] Connected
+2022-06-25 01:44:03,374 [INFO] [Communicaition] Cleared bufferd items
+2022-06-25 01:44:05,497 [WARNING] [Communicaition] Disconnected
+2022-06-25 01:44:19,104 [INFO] [Rover] Rover starting up...
+2022-06-25 01:44:19,158 [INFO] [Communicaition] Connected
+2022-06-25 01:44:19,432 [INFO] [Movement] Movment Enabled
+2022-06-25 01:44:19,496 [INFO] [Arm] Arm Enabled
+2022-06-25 01:44:19,507 [INFO] [Arm] Arm set to default position
+2022-06-25 01:44:19,528 [INFO] [Arm] Arm Disabled
+2022-06-25 01:44:19,539 [INFO] [Rover] Rover start up complete
+2022-06-25 01:44:30,053 [INFO] [Movement] Movment Disabled
+2022-06-25 01:44:32,609 [INFO] [Movement] Movment Enabled
+2022-06-25 01:44:33,630 [INFO] [Movement] Movment Disabled
+2022-06-25 01:44:34,932 [INFO] [Movement] Movment Enabled
+2022-06-25 01:44:40,527 [INFO] [Movement] Movment Disabled
+2022-06-25 01:44:41,499 [INFO] [Movement] Movment Enabled
+2022-06-25 01:44:42,832 [INFO] [Movement] Movment Disabled
+2022-06-25 01:44:43,788 [INFO] [Movement] Movment Enabled
+2022-06-25 01:44:45,130 [INFO] [Movement] Movment Disabled
+2022-06-25 01:44:46,318 [INFO] [Movement] Movment Enabled
+2022-06-25 01:44:47,432 [INFO] [Movement] Movment Disabled
+2022-06-25 01:44:48,700 [INFO] [Movement] Movment Enabled
+2022-06-25 01:44:54,428 [INFO] [Movement] Movment Disabled
+2022-06-25 01:45:06,492 [INFO] [Movement] Movment Enabled
+2022-06-25 01:45:37,998 [INFO] [Movement] Movment Disabled
+2022-06-25 01:45:39,031 [INFO] [Movement] Movment Enabled
+2022-06-25 01:45:40,217 [INFO] [Movement] Movment Disabled
+2022-06-25 01:45:50,497 [INFO] [Movement] Movment Enabled
+2022-06-25 01:45:55,904 [INFO] [Movement] Movment Disabled
+2022-06-25 01:45:58,254 [INFO] [Movement] Movment Enabled
+2022-06-25 01:52:59,699 [INFO] [Rover] Rover starting up...
+2022-06-25 01:52:59,744 [INFO] [Communicaition] Connected
+2022-06-25 01:53:00,032 [INFO] [Movement] Movment Enabled
+2022-06-25 01:53:00,053 [INFO] [Arm] Arm Enabled
+2022-06-25 01:53:00,055 [INFO] [Arm] Arm set to default position
+2022-06-25 01:53:00,078 [INFO] [Arm] Arm Disabled
+2022-06-25 01:53:00,094 [INFO] [Rover] Rover start up complete
+2022-06-25 01:53:49,192 [INFO] [Movement] Movment Disabled
+2022-06-25 01:53:50,329 [INFO] [Movement] Movment Enabled
+2022-06-25 01:53:52,580 [INFO] [Movement] Movment Disabled
+2022-06-25 01:53:55,663 [INFO] [Movement] Movment Enabled
+2022-06-25 01:55:01,148 [INFO] [Rover] Rover starting up...
+2022-06-25 01:55:01,198 [INFO] [Communicaition] Connected
+2022-06-25 01:55:01,536 [INFO] [Movement] Movment Enabled
+2022-06-25 01:55:01,557 [INFO] [Arm] Arm Enabled
+2022-06-25 01:55:01,561 [INFO] [Arm] Arm set to default position
+2022-06-25 01:55:01,581 [INFO] [Arm] Arm Disabled
+2022-06-25 01:55:01,592 [INFO] [Rover] Rover start up complete
+2022-06-25 01:55:01,608 [ERROR] [Sensors] Unable to decode sensor data
+2022-06-25 01:55:06,517 [INFO] [Movement] Movment Disabled
+2022-06-25 01:55:09,167 [INFO] [Movement] Movment Enabled
+2022-06-25 01:55:18,666 [INFO] [Movement] Movment Disabled
+2022-06-25 01:55:19,550 [INFO] [Movement] Movment Enabled
+2022-06-25 01:58:12,323 [INFO] [Movement] Movment Disabled
+2022-06-25 01:58:13,557 [INFO] [Movement] Movment Enabled
+2022-06-25 01:58:23,258 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60358): [Errno 32] Broken pipe
+2022-06-25 01:58:27,146 [INFO] [Movement] Movment Disabled
+2022-06-25 01:58:28,117 [INFO] [Movement] Movment Enabled
+2022-06-25 01:58:40,149 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60371): [Errno 32] Broken pipe
+2022-06-25 01:59:21,111 [WARNING] [Communicaition] Disconnected
+2022-06-25 01:59:24,787 [INFO] [Communicaition] Connected
+2022-06-25 01:59:24,812 [INFO] [Communicaition] Cleared bufferd items
+2022-06-25 01:59:29,945 [INFO] [Movement] Movment Enabled
+2022-06-25 01:59:30,314 [INFO] [Movement] Movment Disabled
+2022-06-25 01:59:30,486 [INFO] [Movement] Movment Enabled
+2022-06-25 01:59:30,665 [INFO] [Movement] Movment Disabled
+2022-06-25 01:59:30,872 [INFO] [Movement] Movment Enabled
+2022-06-25 01:59:31,293 [INFO] [Movement] Movment Disabled
+2022-06-25 01:59:31,526 [INFO] [Movement] Movment Enabled
+2022-06-25 01:59:31,726 [INFO] [Movement] Movment Disabled
+2022-06-25 01:59:31,912 [INFO] [Movement] Movment Enabled
+2022-06-25 01:59:32,124 [INFO] [Movement] Movment Disabled
+2022-06-25 01:59:32,305 [INFO] [Movement] Movment Enabled
+2022-06-25 01:59:33,010 [INFO] [Movement] Movment Disabled
+2022-06-25 01:59:34,719 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60402): [Errno 32] Broken pipe
+2022-06-25 01:59:38,999 [INFO] [Movement] Movment Enabled
+2022-06-25 01:59:39,838 [INFO] [Movement] Movment Disabled
+2022-06-25 02:02:18,421 [INFO] [Movement] Movment Enabled
+2022-06-25 02:02:28,185 [WARNING] [Communicaition] Disconnected
+2022-06-25 02:03:09,203 [INFO] [Communicaition] Connected
+2022-06-25 02:03:09,234 [INFO] [Communicaition] Cleared bufferd items
+2022-06-25 02:04:21,204 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60413): [Errno 32] Broken pipe
+2022-06-25 02:05:25,901 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60496): [Errno 32] Broken pipe
+2022-06-25 02:05:58,917 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60521): [Errno 32] Broken pipe
+2022-06-25 02:17:15,460 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60539): [Errno 32] Broken pipe
+2022-06-25 02:19:07,067 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60710): [Errno 32] Broken pipe
+2022-06-25 02:19:20,604 [INFO] [Rover] Rover starting up...
+2022-06-25 02:19:20,655 [INFO] [Communicaition] Connected
+2022-06-25 02:19:21,064 [INFO] [Movement] Movment Enabled
+2022-06-25 02:19:21,083 [INFO] [Arm] Arm Enabled
+2022-06-25 02:19:21,085 [INFO] [Arm] Arm set to default position
+2022-06-25 02:19:21,102 [INFO] [Arm] Arm Disabled
+2022-06-25 02:19:21,113 [INFO] [Rover] Rover start up complete
+2022-06-25 02:19:37,729 [INFO] [Movement] Movment Disabled
+2022-06-25 02:19:38,859 [INFO] [Movement] Movment Enabled
+2022-06-25 02:19:40,468 [INFO] [Movement] Movment Disabled
+2022-06-25 02:19:42,050 [INFO] [Movement] Movment Enabled
+2022-06-25 02:20:46,470 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60765): [Errno 32] Broken pipe
+2022-06-25 02:22:12,325 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60779): [Errno 32] Broken pipe
+2022-06-25 02:24:04,597 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60823): [Errno 32] Broken pipe
+2022-06-25 02:25:06,500 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60862): [Errno 32] Broken pipe
+2022-06-25 02:25:17,627 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60891): [Errno 32] Broken pipe
+2022-06-25 02:25:26,323 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60901): [Errno 32] Broken pipe
+2022-06-25 02:25:32,352 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60916): [Errno 32] Broken pipe
+2022-06-25 02:26:03,403 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60927): [Errno 32] Broken pipe
+2022-06-25 02:26:20,226 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60952): [Errno 32] Broken pipe
+2022-06-25 02:26:30,019 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60965): [Errno 32] Broken pipe
+2022-06-25 02:27:27,625 [INFO] [Camera] Removed streaming client ('192.168.1.22', 60982): [Errno 32] Broken pipe
+2022-06-25 02:28:22,929 [INFO] [Camera] Removed streaming client ('192.168.1.22', 61001): [Errno 32] Broken pipe
+2022-06-25 02:28:49,115 [INFO] [Camera] Removed streaming client ('192.168.1.22', 61019): [Errno 32] Broken pipe
+2022-06-25 02:32:04,476 [INFO] [Camera] Removed streaming client ('192.168.1.22', 61036): [Errno 32] Broken pipe
+2022-06-25 02:32:11,674 [INFO] [Camera] Removed streaming client ('192.168.1.22', 61088): [Errno 32] Broken pipe
+2022-06-25 02:32:36,359 [INFO] [Camera] Removed streaming client ('192.168.1.22', 61101): [Errno 32] Broken pipe
+2022-06-25 02:34:57,122 [INFO] [Camera] Removed streaming client ('192.168.1.22', 61118): [Errno 32] Broken pipe
+2022-06-25 02:36:02,649 [INFO] [Camera] Removed streaming client ('192.168.1.22', 61217): [Errno 32] Broken pipe
+2022-06-25 02:38:34,035 [INFO] [Camera] Removed streaming client ('192.168.1.22', 61280): [Errno 32] Broken pipe
+2022-06-25 02:39:29,476 [INFO] [Camera] Removed streaming client ('192.168.1.22', 61379): [Errno 32] Broken pipe
+2022-06-25 02:40:24,480 [INFO] [Camera] Removed streaming client ('192.168.1.22', 61402): [Errno 32] Broken pipe
+2022-06-25 02:42:06,560 [INFO] [Camera] Removed streaming client ('192.168.1.22', 61421): [Errno 32] Broken pipe
+2022-06-25 02:43:33,163 [INFO] [Camera] Removed streaming client ('192.168.1.22', 61499): [Errno 32] Broken pipe
+2022-06-25 02:44:55,969 [INFO] [Camera] Removed streaming client ('192.168.1.22', 61568): [Errno 32] Broken pipe
+2022-06-25 02:45:40,113 [INFO] [Camera] Removed streaming client ('192.168.1.22', 61632): [Errno 32] Broken pipe
+2022-06-25 02:46:48,628 [INFO] [Arm] Arm Enabled
+2022-06-25 02:47:14,238 [WARNING] [Servo] Arm yaw limit reached
+2022-06-25 02:47:57,704 [WARNING] [Servo] Arm yaw limit reached
+2022-06-25 02:49:44,815 [INFO] [Camera] Removed streaming client ('192.168.1.22', 61672): [Errno 32] Broken pipe
+2022-06-25 02:50:47,684 [INFO] [Camera] Removed streaming client ('192.168.1.22', 61840): [Errno 32] Broken pipe
+2022-06-25 02:52:28,926 [INFO] [Camera] Removed streaming client ('192.168.1.22', 61900): [Errno 32] Broken pipe
+2022-06-25 02:55:18,504 [INFO] [Camera] Removed streaming client ('192.168.1.22', 61978): [Errno 32] Broken pipe
+2022-06-25 02:56:41,726 [INFO] [Camera] Removed streaming client ('192.168.1.22', 62035): [Errno 32] Broken pipe
+2022-06-25 02:59:48,730 [INFO] [Camera] Removed streaming client ('192.168.1.22', 62104): [Errno 32] Broken pipe
+2022-06-25 03:00:10,681 [INFO] [Camera] Removed streaming client ('192.168.1.22', 62176): [Errno 32] Broken pipe
+2022-06-25 03:00:58,190 [INFO] [Camera] Removed streaming client ('192.168.1.22', 62195): [Errno 32] Broken pipe
+2022-06-25 03:01:05,321 [INFO] [Camera] Removed streaming client ('192.168.1.22', 62220): [Errno 32] Broken pipe
+2022-06-25 03:01:14,381 [INFO] [Camera] Removed streaming client ('192.168.1.22', 62237): [Errno 32] Broken pipe
+2022-06-25 03:01:23,413 [INFO] [Camera] Removed streaming client ('192.168.1.22', 62251): [Errno 32] Broken pipe
+2022-06-25 03:01:53,100 [INFO] [Movement] Movment Disabled
+2022-06-25 03:02:02,850 [INFO] [Movement] Movment Enabled
+2022-06-25 03:02:15,286 [INFO] [Movement] Movment Disabled
+2022-06-25 03:02:20,700 [INFO] [Movement] Movment Enabled
+2022-06-25 03:02:21,597 [INFO] [Movement] Movment Disabled
+2022-06-25 03:03:48,944 [INFO] [Movement] Movment Enabled
+2022-06-25 03:03:50,710 [INFO] [Movement] Movment Disabled
+2022-06-25 03:07:38,274 [INFO] [Rover] Rover starting up...
+2022-06-25 03:07:38,366 [INFO] [Communicaition] Connected
+2022-06-25 03:07:38,634 [INFO] [Movement] Movment Enabled
+2022-06-25 03:07:38,653 [INFO] [Arm] Arm Enabled
+2022-06-25 03:07:38,656 [INFO] [Arm] Arm set to default position
+2022-06-25 03:07:38,675 [INFO] [Arm] Arm Disabled
+2022-06-25 03:07:38,682 [INFO] [Rover] Rover start up complete
+2022-06-25 03:07:38,696 [ERROR] [Sensors] Unable to decode sensor data
+2022-06-25 03:08:17,400 [INFO] [Movement] Movment Disabled
+2022-06-25 03:09:41,024 [INFO] [Movement] Movment Enabled
+2022-06-25 03:09:42,504 [INFO] [Movement] Movment Disabled
+2022-06-25 03:10:27,880 [INFO] [Movement] Movment Enabled
+2022-06-25 03:10:31,813 [INFO] [Movement] Movment Disabled
+2022-06-25 03:15:42,118 [INFO] [Rover] Rover starting up...
+2022-06-25 03:15:42,166 [INFO] [Communicaition] Connected
+2022-06-25 03:15:42,423 [INFO] [Movement] Movment Enabled
+2022-06-25 03:15:42,444 [INFO] [Arm] Arm Enabled
+2022-06-25 03:15:42,446 [INFO] [Arm] Arm set to default position
+2022-06-25 03:15:42,462 [INFO] [Arm] Arm Disabled
+2022-06-25 03:15:42,470 [INFO] [Rover] Rover start up complete
+2022-06-25 03:16:19,248 [INFO] [Movement] Movment Disabled
+2022-06-25 03:16:21,216 [INFO] [Movement] Movment Enabled
+2022-06-25 03:41:23,657 [INFO] [Movement] Movment Disabled
+2022-06-25 03:41:24,672 [INFO] [Movement] Movment Enabled
+2022-06-25 03:41:48,493 [INFO] [Rover] Rover starting up...
+2022-06-25 03:41:48,555 [INFO] [Communicaition] Connected
+2022-06-25 03:41:48,854 [INFO] [Movement] Movment Enabled
+2022-06-25 03:41:48,870 [INFO] [Arm] Arm Enabled
+2022-06-25 03:41:48,873 [INFO] [Arm] Arm set to default position
+2022-06-25 03:41:48,892 [INFO] [Arm] Arm Disabled
+2022-06-25 03:41:48,898 [INFO] [Rover] Rover start up complete
+2022-06-25 03:47:30,936 [INFO] [Rover] Rover starting up...
+2022-06-25 03:47:31,149 [INFO] [Communicaition] Connected
+2022-06-25 03:48:05,276 [INFO] [Rover] Rover starting up...
+2022-06-25 03:48:05,545 [INFO] [Communicaition] Connected
+2022-06-25 03:48:11,345 [INFO] [Movement] Movment Enabled
+2022-06-25 03:48:16,038 [INFO] [Arm] Arm Enabled
+2022-06-25 03:48:16,042 [INFO] [Arm] Arm set to default position
+2022-06-25 03:48:16,073 [INFO] [Arm] Arm Disabled
+2022-06-25 03:48:16,110 [INFO] [Rover] Rover start up complete
+2022-06-25 03:51:59,379 [INFO] [Rover] Rover starting up...
+2022-06-25 03:51:59,427 [INFO] [Communicaition] Connected
+2022-06-25 03:51:59,712 [INFO] [Movement] Movment Enabled
+2022-06-25 03:51:59,734 [INFO] [Arm] Arm Enabled
+2022-06-25 03:51:59,736 [INFO] [Arm] Arm set to default position
+2022-06-25 03:51:59,751 [INFO] [Arm] Arm Disabled
+2022-06-25 03:51:59,760 [INFO] [Rover] Rover start up complete
+2022-06-25 03:52:51,840 [INFO] [Movement] Movment Disabled
+2022-06-25 03:52:52,786 [INFO] [Movement] Movment Enabled
+2022-06-25 03:53:02,620 [WARNING] [Communicaition] Disconnected
+2022-06-25 03:53:16,079 [INFO] [Rover] Rover starting up...
+2022-06-25 03:53:16,127 [INFO] [Communicaition] Connected
+2022-06-25 03:53:16,361 [INFO] [Movement] Movment Enabled
+2022-06-25 03:53:16,380 [INFO] [Arm] Arm Enabled
+2022-06-25 03:53:16,382 [INFO] [Arm] Arm set to default position
+2022-06-25 03:53:16,397 [INFO] [Arm] Arm Disabled
+2022-06-25 03:53:16,406 [INFO] [Rover] Rover start up complete
+2022-06-25 03:53:16,421 [ERROR] [Sensors] Unable to decode sensor data
+2022-06-25 03:55:51,502 [INFO] [Camera] Removed streaming client ('192.168.1.22', 50608): [Errno 32] Broken pipe
+                                                                2022-06-25 17:29:46,272 [INFO] [Rover] Rover starting up...
+2022-06-25 17:29:46,316 [INFO] [Communicaition] Connected
+2022-06-25 17:29:46,444 [INFO] [Movement] Movment Enabled
+2022-06-25 17:29:46,462 [INFO] [Arm] Arm Enabled
+2022-06-25 17:29:46,468 [INFO] [Arm] Arm set to default position
+2022-06-25 17:29:46,482 [INFO] [Arm] Arm Disabled
+2022-06-25 17:29:46,485 [INFO] [Rover] Rover start up complete
+2022-06-25 17:29:58,541 [INFO] [Movement] Movment Disabled
+2022-06-25 17:29:59,418 [INFO] [Movement] Movment Enabled
+2022-06-25 17:38:29,038 [INFO] [Rover] Rover starting up...
+2022-06-25 17:38:29,067 [INFO] [Communicaition] Connected
+2022-06-25 17:38:29,186 [INFO] [Movement] Movment Enabled
+2022-06-25 17:38:29,200 [INFO] [Arm] Arm Enabled
+2022-06-25 17:38:29,200 [INFO] [Arm] Arm set to default position
+2022-06-25 17:38:29,211 [INFO] [Arm] Arm Disabled
+2022-06-25 17:38:29,212 [ERROR] [Sensors] COM port error
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 265, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/Documents/rover/code/Sensors.py", line 19, in __init__
+    self.serialPort = Serial('/dev/ttyACM0',9600,timeout=1)
+  File "/usr/lib/python3/dist-packages/serial/serialutil.py", line 240, in __init__
+    self.open()
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 268, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2022-06-25 17:38:29,227 [INFO] [Rover] Rover start up complete
+2022-06-25 17:38:52,522 [INFO] [Rover] Rover starting up...
+2022-06-25 17:38:52,551 [INFO] [Communicaition] Connected
+2022-06-25 17:38:52,665 [INFO] [Movement] Movment Enabled
+2022-06-25 17:38:52,676 [INFO] [Arm] Arm Enabled
+2022-06-25 17:38:52,679 [INFO] [Arm] Arm set to default position
+2022-06-25 17:38:52,690 [INFO] [Arm] Arm Disabled
+2022-06-25 17:38:52,692 [INFO] [Rover] Rover start up complete
+2022-06-25 17:44:13,909 [INFO] [Rover] Rover starting up...
+2022-06-25 17:44:13,938 [INFO] [Communicaition] Connected
+2022-06-25 17:44:14,062 [INFO] [Movement] Movment Enabled
+2022-06-25 17:44:14,073 [INFO] [Arm] Arm Enabled
+2022-06-25 17:44:14,078 [INFO] [Arm] Arm set to default position
+2022-06-25 17:44:14,085 [INFO] [Arm] Arm Disabled
+2022-06-25 17:44:14,086 [INFO] [Rover] Rover start up complete
+2022-06-25 17:44:37,515 [INFO] [Rover] Rover starting up...
+2022-06-25 17:44:37,545 [INFO] [Communicaition] Connected
+2022-06-25 17:44:37,668 [INFO] [Movement] Movment Enabled
+2022-06-25 17:44:37,680 [INFO] [Arm] Arm Enabled
+2022-06-25 17:44:37,685 [INFO] [Arm] Arm set to default position
+2022-06-25 17:44:37,696 [INFO] [Arm] Arm Disabled
+2022-06-25 17:44:37,701 [INFO] [Rover] Rover start up complete
+2022-06-25 17:44:56,287 [INFO] [Movement] Movment Enabled
+2022-06-25 17:45:34,763 [INFO] [Rover] Rover starting up...
+2022-06-25 17:45:34,791 [INFO] [Communicaition] Connected
+2022-06-25 17:45:34,911 [INFO] [Movement] Movment Enabled
+2022-06-25 17:45:34,921 [INFO] [Arm] Arm Enabled
+2022-06-25 17:45:34,924 [INFO] [Arm] Arm set to default position
+2022-06-25 17:45:34,933 [INFO] [Arm] Arm Disabled
+2022-06-25 17:45:34,935 [INFO] [Rover] Rover start up complete
+2022-06-25 17:45:36,818 [INFO] [Movement] Movment Disabled
+2022-06-25 17:45:37,756 [INFO] [Movement] Movment Enabled
+2022-06-25 21:47:45,461 [INFO] [Rover] Rover starting up...
+2022-06-25 21:47:45,494 [INFO] [Communicaition] Connected
+2022-06-25 21:47:45,647 [INFO] [Movement] Movment Enabled
+2022-06-25 21:47:45,672 [INFO] [Arm] Arm Enabled
+2022-06-25 21:47:45,673 [INFO] [Arm] Arm set to default position
+2022-06-25 21:47:45,697 [INFO] [Arm] Arm Disabled
+2022-06-25 21:47:45,698 [INFO] [Rover] Rover start up complete
+2022-06-25 22:25:39,112 [INFO] [Movement] Movment Disabled
+2022-06-25 22:25:45,449 [INFO] [Movement] Movment Enabled
+2022-06-25 22:25:47,556 [INFO] [Movement] Movment Disabled
+2022-06-25 22:25:55,473 [INFO] [Movement] Movment Enabled
+2022-06-25 22:26:01,751 [INFO] [Movement] Movment Disabled
+2022-06-25 22:26:03,767 [INFO] [Movement] Movment Enabled
+2022-06-25 22:26:05,985 [INFO] [Movement] Movment Disabled
+2022-06-25 22:26:06,950 [INFO] [Movement] Movment Enabled
+2022-06-25 22:26:34,617 [INFO] [Movement] Movment Disabled
+2022-06-25 22:26:35,773 [INFO] [Movement] Movment Enabled
+2022-06-25 22:26:37,110 [INFO] [Movement] Movment Disabled
+2022-06-25 22:26:38,824 [INFO] [Movement] Movment Enabled
+2022-06-25 22:37:12,846 [INFO] [Camera] Removed streaming client ('192.168.1.100', 58568): [Errno 32] Broken pipe
+2022-06-27 16:47:43,883 [INFO] [Rover] Rover starting up...
+2022-06-27 16:47:43,917 [INFO] [Communicaition] Connected
+2022-06-27 16:47:44,059 [INFO] [Movement] Movment Enabled
+2022-06-27 16:47:44,080 [INFO] [Arm] Arm Enabled
+2022-06-27 16:47:44,082 [INFO] [Arm] Arm set to default position
+2022-06-27 16:47:44,093 [INFO] [Arm] Arm Disabled
+2022-06-27 16:47:44,095 [INFO] [Rover] Rover start up complete
+2022-06-27 16:51:31,806 [WARNING] [Communicaition] Disconnected
+2022-06-27 16:51:33,680 [INFO] [Communicaition] Connected
+2022-06-27 16:51:33,688 [INFO] [Communicaition] Cleared bufferd items
+2022-06-27 16:54:57,411 [INFO] [Movement] Movment Enabled
+2022-06-27 17:03:56,532 [INFO] [Movement] Movment Disabled
+2022-06-27 17:03:57,444 [INFO] [Movement] Movment Enabled
+2022-06-27 17:03:57,946 [INFO] [Movement] Movment Disabled
+2022-06-27 17:04:06,030 [INFO] [Movement] Movment Enabled
+2022-06-27 17:21:16,999 [INFO] [Camera] Removed streaming client ('192.168.1.22', 59950): [Errno 32] Broken pipe
+2022-06-27 17:21:28,485 [WARNING] [Communicaition] Disconnected
