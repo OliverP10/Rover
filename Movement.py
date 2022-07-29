@@ -66,6 +66,39 @@ class Movement:
         self.motor_four.set_speed(self.speed)
         self.motor_two.set_speed(self.speed)
 
+    def all_forward(self):
+        self.motor_one.set_forward()
+        self.motor_two.set_forward()
+        self.motor_three.set_forward()
+        self.motor_four.set_forward()
+
+        self.motor_one.set_speed(self.speed)
+        self.motor_two.set_speed(self.speed)
+        self.motor_three.set_speed(self.speed)
+        self.motor_four.set_speed(self.speed)
+
+    def all_stop(self):
+        self.motor_one.set_forward()
+        self.motor_two.set_forward()
+        self.motor_three.set_forward()
+        self.motor_four.set_forward()
+
+        self.motor_one.set_speed(0, override=True)
+        self.motor_two.set_speed(0, override=True)
+        self.motor_three.set_speed(0, override=True)
+        self.motor_four.set_speed(0, override=True)
+
+    def all_backward(self):
+        self.motor_one.set_backward()
+        self.motor_two.set_backward()
+        self.motor_three.set_backward()
+        self.motor_four.set_backward()
+
+        self.motor_one.set_speed(self.speed)
+        self.motor_two.set_speed(self.speed)
+        self.motor_three.set_speed(self.speed)
+        self.motor_four.set_speed(self.speed)
+
     def send_all_telem(self):
         self.motor_one.send_all_telem()
         self.motor_two.send_all_telem()

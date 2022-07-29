@@ -38,7 +38,7 @@ class Rover:
         self.pwm_controller = PwmController()
         self.movement = Movement(self)
         self.arm = Arm(self)
-        # self.sensors = Sensors(self)
+        #self.sensors = Sensors(self)
         
         self.control_mappings = dict()
         self.key_mappings = dict()
@@ -63,7 +63,7 @@ class Rover:
         self.control_mappings['arm_yaw'] = self.arm.yaw.set_angle
         self.control_mappings['arm_pitch1'] = self.arm.pitch1.set_angle
         self.control_mappings['arm_pitch2'] = self.arm.pitch2.set_angle
-        self.control_mappings['arm_claw'] = self.arm.claw.set_angle
+        self.control_mappings['arm_sequence'] = self.arm.execute_sequence
         self.control_mappings['arm_armed'] = self.arm.set_enabled
         self.control_mappings['movement_armed'] = self.movement.set_enabled
         self.control_mappings['movement_speed'] = self.movement.set_speed
@@ -81,8 +81,6 @@ class Rover:
         self.key_mappings['k_d'] = self.arm.pitch1.decrease_angle
         self.key_mappings['o_d'] = self.arm.pitch2.increase_angle
         self.key_mappings['l_d'] = self.arm.pitch2.decrease_angle
-        self.key_mappings['p_d'] = self.arm.claw.increase_angle
-        self.key_mappings[';_d'] = self.arm.claw.decrease_angle
 
         self.key_mappings['q_d'] = self.movement.left_forward
         self.key_mappings['q_u'] = self.movement.left_stop
@@ -92,6 +90,11 @@ class Rover:
         self.key_mappings['e_u'] = self.movement.right_stop
         self.key_mappings['d_d'] = self.movement.right_backward
         self.key_mappings['d_u'] = self.movement.right_stop
+
+        self.key_mappings['w_d'] = self.movement.all_forward
+        self.key_mappings['w_u'] = self.movement.all_stop
+        self.key_mappings['s_d'] = self.movement.all_backward
+        self.key_mappings['s_u'] = self.movement.all_stop
 
 
        
