@@ -36,14 +36,15 @@ class Rover:
         
         self.camera = Camera()
         self.pwm_controller = PwmController()
-        self.movement = Movement(self)
         self.arm = Arm(self)
-        #self.sensors = Sensors(self)
+        self.movement = Movement(self)
+        self.sensors = Sensors(self)
         
         self.control_mappings = dict()
         self.key_mappings = dict()
         self.load_control_mappings()
         self.load_key_mappings()
+        self.send_all_telem()
         self.logger.info("Rover start up complete")
 
     def setup_telem_logging(self):
@@ -65,8 +66,10 @@ class Rover:
         self.control_mappings['arm_pitch2'] = self.arm.pitch2.set_angle
         self.control_mappings['arm_sequence'] = self.arm.execute_sequence
         self.control_mappings['arm_armed'] = self.arm.set_enabled
+        self.control_mappings['claw_armed'] = self.arm.claw.set_enabled
         self.control_mappings['movement_armed'] = self.movement.set_enabled
         self.control_mappings['movement_speed'] = self.movement.set_speed
+        self.control_mappings['arm_override'] = self.arm.set_manual_override
 
     def decode_key_frame(self, key:str) -> None:
         if(key in self.key_mappings):
@@ -75,12 +78,17 @@ class Rover:
             self.logger.debug("Keybinding '"+key+"' not found")
 
     def load_key_mappings(self) -> None:    #have to re do this when i re write the servo class anyway  # idead, have a run method for each class and then just ahve the one thread loop thoruhg all the run methods every x millis
-        self.key_mappings['j_d'] = self.arm.yaw.increase_angle
-        self.key_mappings['u_d'] = self.arm.yaw.decrease_angle
+        self.key_mappings['u_d'] = self.arm.yaw.increase_angle
+        self.key_mappings['j_d'] = self.arm.yaw.decrease_angle
         self.key_mappings['i_d'] = self.arm.pitch1.increase_angle
         self.key_mappings['k_d'] = self.arm.pitch1.decrease_angle
         self.key_mappings['o_d'] = self.arm.pitch2.increase_angle
         self.key_mappings['l_d'] = self.arm.pitch2.decrease_angle
+
+        self.key_mappings['p_d'] = self.arm.claw.open
+        self.key_mappings['p_u'] = self.arm.claw.stop
+        self.key_mappings[';_d'] = self.arm.claw.close
+        self.key_mappings[';_u'] = self.arm.claw.stop
 
         self.key_mappings['q_d'] = self.movement.left_forward
         self.key_mappings['q_u'] = self.movement.left_stop
@@ -96,5 +104,6 @@ class Rover:
         self.key_mappings['s_d'] = self.movement.all_backward
         self.key_mappings['s_u'] = self.movement.all_stop
 
-
-       
+    def send_all_telem(self):
+        self.movement.send_all_telem()
+        self.arm.send_all_telem()

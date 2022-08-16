@@ -45,14 +45,19 @@ class Communicaition:
 
         @self.sio.on('key-frame')
         def key_frame(data:str) -> None:
-            with self.lock:
+            if(self.lock.acquire()): 
                 self.rover.decode_key_frame(data)
+                self.lock.release()
+            else:
+                self.logger.warn("Blocking concurrent key frame commands")
 
         @self.sio.on('control-frame')
         def control_frame(data:json) -> None:
-            if(self.lock.acquire()):
+            if(self.lock.acquire()):  #blocking=False
                 self.rover.decode_control_frame(data)
                 self.lock.release()
+            else:
+                self.logger.warn("Blocking concurrent control frame commands")
 
     def send_telemetry(self, data:dict):
         if (self.connected):

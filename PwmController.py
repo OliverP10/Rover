@@ -10,14 +10,14 @@ class PwmController:
         self.kit = ServoKit(channels=16)
 
         # kit.servo[0].actuation_range = 270
-        # kit.servo[1].actuation_range = 270
+        #self.kit.servo[1].actuation_range = 250
         # kit.servo[2].actuation_range = 270
         # kit.servo[3].actuation_range = 270
 
         self.kit.servo[0].set_pulse_width_range(500, 2600)
         self.kit.servo[1].set_pulse_width_range(500, 2600)
-        self.kit.servo[2].set_pulse_width_range(500, 2600)
-        self.kit.servo[3].set_pulse_width_range(500, 2600)
+        self.kit.servo[2].set_pulse_width_range(771, 2193)
+        self.kit.continuous_servo[3].set_pulse_width_range(-19000, 19000)
 
         self.kit.continuous_servo[4].set_pulse_width_range(-19000, 19000)
         self.kit.continuous_servo[5].set_pulse_width_range(-19000, 19000)

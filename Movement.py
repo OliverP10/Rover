@@ -14,10 +14,10 @@ class Movement:
     def __init__(self, rover) -> None:
         self.logger = logging.getLogger(__name__)
         self.rover = rover
-        self.motor_one = Motor(rover, "motor_one", 0, 5, 4, False)
-        self.motor_two = Motor(rover, "motor_two", 13, 6, 5, False)
-        self.motor_three = Motor(rover, "motor_three", 23, 24, 6, False)
-        self.motor_four = Motor(rover, "motor_four", 26, 19, 7, False)
+        self.motor_one = Motor(rover, "motor_one", 5, 0, 4, False)
+        self.motor_two = Motor(rover, "motor_two", 6, 13, 5, False)
+        self.motor_three = Motor(rover, "motor_three", 23, 25, 6, False)
+        self.motor_four = Motor(rover, "motor_four", 16, 20, 7, False)
         self.set_enabled(True)
         self.set_speed(0.5)
 
@@ -78,15 +78,16 @@ class Movement:
         self.motor_four.set_speed(self.speed)
 
     def all_stop(self):
-        self.motor_one.set_forward()
-        self.motor_two.set_forward()
-        self.motor_three.set_forward()
-        self.motor_four.set_forward()
-
         self.motor_one.set_speed(0, override=True)
         self.motor_two.set_speed(0, override=True)
         self.motor_three.set_speed(0, override=True)
         self.motor_four.set_speed(0, override=True)
+
+        self.motor_one.set_forward()
+        self.motor_two.set_forward()
+        self.motor_three.set_forward()
+        self.motor_four.set_forward()
+        
 
     def all_backward(self):
         self.motor_one.set_backward()

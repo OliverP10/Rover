@@ -23,42 +23,42 @@ class Servo:
         self.min = min
         self.max = max
         self.enabled = False
+        self.permanent_overide = False
         self.position = 0
-        self.update_rate = 0.01
+        self.update_rate = 0.0001
         self.last_triggered = 0
         self.lock = threading.Lock()
         
-    def set_angle(self, angle:int, override:bool = False) -> None:
+    def set_angle(self, angle:int, temp_override:bool = False) -> None:
         if(not(self.enabled)):
-            print("Arm disabled")
+            self.logger.error("Cannot move servo while it disarmed")
             return
-        elif(self.position == angle and not override):
+        elif((self.position == angle) and (not temp_override) and (not self.permanent_overide)):
             return
-        elif(not(time.time()-self.update_rate > self.last_triggered)  and not override): #rate limiter
+        elif((not(time.time()-self.update_rate > self.last_triggered))  and (not temp_override) and (not self.permanent_overide)): #rate limiter
             print("rate limit reached")
             return
-        elif(not(self.min <= angle <= self.max)  and not override):
-            print("Arm "+self.name+" limit reached")
-            self.logger.warn("Arm "+self.name+" limit reached")
+        elif((not(self.min <= angle <= self.max))  and (not temp_override) and (not self.permanent_overide)):
+            self.logger.warn("Arm '"+self.name+"' limit reached")
             return
         
         self.rover.pwm_controller.set_servo(self.pin, angle)
         self.position = angle
         self.last_triggered=time.time()
         self.rover.communication.send_telemetry({"arm_"+self.name: angle})
-        print(self.name+":"+str(angle))
+
 
     def set_angle_with_delay(self, angle:int, steps:int, delay:float):
         if(not(self.enabled)):
             self.logger.error("Cannot move servo while it disarmed")
             return
 
-        self.logger.info("Executing servo movment on '"+self.name+"' for "+str(abs(angle-self.position)*delay)+" seconds")
+        self.logger.info("Executing servo movment on '"+self.name+"' for "+str(abs((angle-self.position)/steps)*delay)+" seconds")
         if self.position > angle:
             angle-=1
             steps= -steps
         else:
-            angle+=1
+            angle+=0
         for i in range(self.position,angle,steps):
             if(not(self.enabled)):
                 self.logger.error("Cancelling operaition as servo was disarmed")
@@ -74,9 +74,11 @@ class Servo:
         self.position = angle
         self.last_triggered=time.time()
         self.rover.communication.send_telemetry({"arm_"+self.name: angle})
-        print(self.name+":"+str(angle))
-
-
+        self.logger.info("Execution on '"+self.name+"' servo complete")
+    
+    def set_permanent_override(self, boolean: bool):
+        self.permanent_overide = boolean
+        self.logger.warning("Manule override enabled on '"+self.name+"'" if boolean else "Manule override disabled on '"+self.name+"'")
 
     def increase_angle(self):
         self.set_angle(self.position+1)
