@@ -1,6 +1,7 @@
 import logging
 from Motor import Motor
 
+
 class Movement:
 
     motor_one: Motor
@@ -14,25 +15,25 @@ class Movement:
     def __init__(self, rover) -> None:
         self.logger = logging.getLogger(__name__)
         self.rover = rover
-        self.motor_one = Motor(rover, "motor_one", 5, 0, 4, False)
-        self.motor_two = Motor(rover, "motor_two", 6, 13, 5, False)
-        self.motor_three = Motor(rover, "motor_three", 23, 25, 6, False)
-        self.motor_four = Motor(rover, "motor_four", 16, 20, 7, False)
+        self.motor_one = Motor(rover, "motor_one", 50,  0, 5)
+        self.motor_two = Motor(rover, "motor_two", 53,  13, 6)
+        self.motor_three = Motor(rover, "motor_three", 56, 25, 7)
+        self.motor_four = Motor(rover, "motor_four", 59, 20, 8)
         self.set_enabled(True)
         self.set_speed(0.5)
 
-    def set_enabled(self, enabled:bool):
+    def set_enabled(self, enabled: bool):
         self.motor_one.enable() if enabled else self.motor_one.disable()
         self.motor_two.enable() if enabled else self.motor_two.disable()
         self.motor_three.enable() if enabled else self.motor_three.disable()
         self.motor_four.enable() if enabled else self.motor_four.disable()
         self.enabled = enabled
         self.logger.info("Movment Enabled" if enabled else "Movment Disabled")
-        self.rover.communication.send_telemetry({"movement_enabled": enabled})
+        self.rover.communication.send_telemetry({"48": int(enabled)})
 
-    def set_speed(self, speed:float):
+    def set_speed(self, speed: float):
         self.speed = float(speed)
-        self.rover.communication.send_telemetry({"movement_speed": speed})
+        self.rover.communication.send_telemetry({"49": speed})
 
     def left_forward(self):
         self.motor_one.set_forward()
@@ -87,7 +88,6 @@ class Movement:
         self.motor_two.set_forward()
         self.motor_three.set_forward()
         self.motor_four.set_forward()
-        
 
     def all_backward(self):
         self.motor_one.set_backward()

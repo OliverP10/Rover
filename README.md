@@ -1,2 +1,0 @@
-# Rover
-Basic rover code

@@ -1,11 +1,12 @@
 import logging
 from threading import Thread
 
+
 class Camera:
     thread: Thread
 
     def __init__(self) -> None:
-        self.thread: Thread = Thread(target=self.start,args=()).start()
+        self.thread: Thread = Thread(target=self.start, args=()).start()
 
     def start(self) -> None:
         logger = logging.getLogger(__name__)
@@ -19,7 +20,6 @@ class Camera:
         import socketserver
         from threading import Condition
         from http import server
-
 
         class StreamingOutput(object):
             def __init__(self):
@@ -72,8 +72,8 @@ class Camera:
 
         with picamera.PiCamera(resolution='640x480', framerate=30) as camera:
             output = StreamingOutput()
-            #Uncomment the next line to change your Pi's Camera rotation (in degrees)
-            #camera.rotation = -90
+            # Uncomment the next line to change your Pi's Camera rotation (in degrees)
+            # camera.rotation = -90
             camera.start_recording(output, format='mjpeg')
             try:
                 address = ('', 8000)
