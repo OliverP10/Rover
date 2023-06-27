@@ -31,6 +31,7 @@ class Arm:
     enabled: bool
     manual_override: bool
     current_sequence: ARM_SEQUENCE
+    next_sequence: ARM_SEQUENCE
     sequence_mappings: dict
 
     def __init__(self, rover) -> None:
@@ -38,6 +39,7 @@ class Arm:
         self.rover = rover
         self.sequence_mappings = dict()
         self.current_sequence = ARM_SEQUENCE.STOW
+        self.next_sequence = ARM_SEQUENCE.STOW
         self.yaw = Servo(rover, "yaw", 62, 0, 120, 136)
         self.pitch1 = Servo(rover, "pitch1", 63, 1, 10, 130)
         self.pitch2 = Servo(rover, "pitch2", 64, 2, 0, 180)
@@ -113,7 +115,8 @@ class Arm:
     def store_arm_sequence(self):
         if (self.arm_sequence_checks(ARM_SEQUENCE.STORE)):
             self.logger.info("Executing sequence: "+str(ARM_SEQUENCE.STORE))
-            self.rover.communication.send_telemetry({"71": int(ARM_SEQUENCE.STORE)})
+            self.next_sequence = str(ARM_SEQUENCE.STORE)
+            self.rover.communication.send_telemetry({"73": int(ARM_SEQUENCE.STORE)})
             self.yaw.set_angle(17, temp_override=True)
             self.pitch1.set_angle(30, temp_override=True)
             self.pitch1.set_angle_with_delay(120, 1, 0.1)
@@ -127,7 +130,8 @@ class Arm:
     def deploy_arm_sequence(self):
         if (self.arm_sequence_checks(ARM_SEQUENCE.DEPLOY)):
             self.logger.info("Executing sequence: "+str(ARM_SEQUENCE.DEPLOY))
-            self.rover.communication.send_telemetry({"71": int(ARM_SEQUENCE.DEPLOY)})
+            self.next_sequence = str(ARM_SEQUENCE.DEPLOY)
+            self.rover.communication.send_telemetry({"73": int(ARM_SEQUENCE.DEPLOY)})
             self.pitch1.set_angle_with_delay(120, 1, 0.1)
             self.yaw.set_angle_with_delay(17, 1, 0.1)
             self.pitch1.set_angle_with_delay(100, 1, 0.1)
@@ -139,7 +143,8 @@ class Arm:
     def stow_arm_sequence(self):
         if (self.arm_sequence_checks(ARM_SEQUENCE.STOW)):
             self.logger.info("Executing sequence: "+str(ARM_SEQUENCE.STOW))
-            self.rover.communication.send_telemetry({"71": int(ARM_SEQUENCE.STOW)})
+            self.next_sequence = str(ARM_SEQUENCE.STOW)
+            self.rover.communication.send_telemetry({"73": int(ARM_SEQUENCE.STOW)})
             self.yaw.set_angle(17, temp_override=True)
             self.pitch1.set_angle(30, temp_override=True)
             self.pitch1.set_angle_with_delay(120, 1, 0.1)
@@ -153,6 +158,8 @@ class Arm:
     def send_all_telem(self):
         self.rover.communication.send_telemetry({"70": int(self.enabled)})
         self.rover.communication.send_telemetry({"71": int(self.manual_override)})
+        self.rover.communication.send_telemetry({"72": int(self.current_sequence)})
+        self.rover.communication.send_telemetry({"73": int(self.current_sequence)})
         self.yaw.send_all_telem()
         self.pitch1.send_all_telem()
         self.pitch2.send_all_telem()

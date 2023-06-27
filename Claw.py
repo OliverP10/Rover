@@ -13,7 +13,7 @@ class Claw:
         self.rover = rover
         self.enabled = False
         self.speed = 1
-        self.motor = ClawMotor(rover, "claw", 66, 26, 9, 4, False)
+        self.motor = ClawMotor(rover, "claw", 66, input_one, input_two, pwm_pin, False)
 
     def set_enabled(self, enabled: bool):
         self.motor.enable() if enabled else self.motor.disable()

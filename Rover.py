@@ -31,6 +31,7 @@ class Rover:
     def start(self) -> None:
         self.logger = logging.getLogger("Rover")
         self.logger.info("Rover starting up...")
+        GPIO.setmode(GPIO.BCM) # Use GPI numbers for pins
         self.communication = Communicaition(self)
         self.setup_telem_logging()
 

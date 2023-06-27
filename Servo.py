@@ -54,6 +54,7 @@ class Servo:
             self.rover.pwm_controller.set_servo(self.pin, angle)
             self.position = angle
             self.last_triggered = time.time()
+            self.logger.debug("Set "+self.name+" angle: "+ str(angle))
         
         self.rover.communication.send_telemetry({self.telemetry_id: self.position})
 
