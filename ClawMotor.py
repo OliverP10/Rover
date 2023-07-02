@@ -9,7 +9,8 @@ class ClawMotor:  # i think its using GPIo.BCM rather than board
 
     input_one_pin: int
     input_two_pin: int
-    pwm_pin: int
+    pwm_pin_number: int
+    pwm_pin: any
 
     invert: bool
     name: str
@@ -25,7 +26,7 @@ class ClawMotor:  # i think its using GPIo.BCM rather than board
         self.telemetry_id = telemetry_id
         self.input_one_pin = input_one
         self.input_two_pin = input_two
-        self.pwm_pin = pwm_pin
+        self.pwm_pin_number = pwm_pin
         self.invert = invert
         self.enabled = True
         self.forwards = True
@@ -41,6 +42,9 @@ class ClawMotor:  # i think its using GPIo.BCM rather than board
     def setup(self):
         GPIO.setup(self.input_one_pin, GPIO.OUT)
         GPIO.setup(self.input_two_pin, GPIO.OUT)
+        GPIO.setup(self.pwm_pin_number, GPIO.OUT)
+        self.pwm_pin = GPIO.PWM(self.pwm_pin_number, 100)
+        self.pwm_pin.start(0)
 
     def disable(self):
         self.enabled = False
@@ -73,7 +77,7 @@ class ClawMotor:  # i think its using GPIo.BCM rather than board
 
     def set_speed(self, speed: float, override: bool = False):
         if (self.enabled or override):
-            self.rover.pwm_controller.set_motor(self.pwm_pin, speed)
+            self.pwm_pin.ChangeDutyCycle(speed*100)
             self.speed = speed
             self.rover.communication.send_telemetry({self.telemetry_id+self.speed_telemetry_offset: speed})
 
