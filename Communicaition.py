@@ -5,79 +5,39 @@ import Common
 import json
 import time
 from typing import List
-
+from WifiCommunication import WifiCommunication
+from RadioCommunication import RadioCommunication
 
 class Communicaition:
     logger = logging.getLogger(__name__)
-    sio: Client = Client()
-    lock: Lock = Lock()
-    telemetry_buffer: any = []
-    log_buffer: any = []
-    connected: bool = False                     # Built in one doesnt work
-    reconection: bool = False
+    connected: bool = False
+
+    wifi_communication: WifiCommunication
+    radio_communication: RadioCommunication
 
     def __init__(self, rover) -> None:
         self.rover = rover
-        self.call_backs()
-        try:
-            self.sio.connect('http://'+Common.ROOT_IP+':3000')
-        except Exception as e:
-            self.logger.critical("Unable to connect to server: ", exc_info=e)
+        self.radio_communication = RadioCommunication(self.rover)
+        self.wifi_communication = WifiCommunication(self.rover)
 
-    def call_backs(self) -> None:
+    def setup(self):
+        self.wifi_communication.setup()
+        self.radio_communication.setup()
 
-        @self.sio.event
-        def connect() -> None:
+    def check_connection_status(self):
+        if self.wifi_communication.connected:
             self.connected = True
-            self.logger.info("Connected")
-            self.sio.emit("setType", "vehicle")
-
-            if self.reconection:
-                self.send_all_rover_telem()
-                self.flush_buffer()
-
-        @self.sio.event
-        def disconnect() -> None:
+        elif self.radio_communication.connected:
+            self.connected = True
+        else:
             self.connected = False
-            self.reconection = True
-            self.logger.warn("Disconnected")
-
-        @self.sio.on('control-frame')
-        def control_frame(data: json) -> None:
-            if (self.lock.acquire()):  # blocking=False
-                self.rover.decode_control_frame(data)
-                self.lock.release()
-            else:
-                self.logger.warn("Blocking concurrent control frame commands")
 
     def send_telemetry(self, data: dict):
-        if (self.connected):
-            self.sio.emit("telemetry", json.dumps(data))
-        else:
-            self.telemetry_buffer.append(data)
-
-    def send_arduino_status(self, status: bool):
-        if (self.connected):
-            self.sio.emit("serial-port", status)
+        self.radio_communication.send_telemetry(data)
+        self.wifi_communication.send_telemetry(data)
 
     def send_log(self, log: str):
-        if (self.connected):
-            self.sio.emit("log", log)
-        else:
-            self.log_buffer.append(log)
-
-    def flush_buffer(self):
-        try:
-            for data in self.telemetry_buffer:
-                self.sio.emit("telemetry", json.dumps(data))
-            self.telemetry_buffer = []
-
-            for log in self.log_buffer:
-                self.sio.emit("log", log)
-            self.log_buffer = []
-            self.logger.info("Cleared bufferd items")
-        except Exception as e:
-            self.logger.error("Unable to clear buffer")
+        self.wifi_communication.send_log(log)
 
     def send_all_rover_telem(self):
         self.rover.movement.send_all_telem()

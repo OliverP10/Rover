@@ -1,0 +1,5 @@
+Re write motor drivers
+Do sensor class
+redo claw
+Add sesnsors to database
+add stomp event to database
