@@ -6,9 +6,13 @@ class Camera:
 
     def __init__(self) -> None:
         self.thread: Thread = Thread(target=self.start,args=()).start()
+        
+        
 
     def start(self) -> None:
         logger = logging.getLogger(__name__)
+        logger.info("Camera started")
+        # http://192.168.0.10:8000/stream.mjpg
 
         # Web streaming example
         # Source code from the official PiCamera package
@@ -73,12 +77,14 @@ class Camera:
         with picamera.PiCamera(resolution='640x480', framerate=30) as camera:
             output = StreamingOutput()
             #Uncomment the next line to change your Pi's Camera rotation (in degrees)
-            camera.rotation =180
+            camera.rotation =0
             camera.start_recording(output, format='mjpeg')
             try:
                 address = ('', 8000)
                 server = StreamingServer(address, StreamingHandler)
                 server.serve_forever()
                 logger.info("Camera started")
+            except Exception as e:
+                logger.error('Camera error', exc_info=e)
             finally:
                 camera.stop_recording()

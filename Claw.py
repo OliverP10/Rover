@@ -1,11 +1,11 @@
 import logging
-from ClawMotor import ClawMotor
+from Servo import Servo
 
 
 class Claw:
     logger: any
     rover: any
-    motor: ClawMotor
+    servo: Servo
     speed: int
 
     def __init__(self, rover, input_one: int, input_two: int, pwm_pin: int) -> None:
@@ -13,28 +13,28 @@ class Claw:
         self.rover = rover
         self.enabled = False
         self.speed = 1
-        self.motor = ClawMotor(rover, "claw", 66, input_one, input_two, pwm_pin, False)
+        self.servo = Servo(rover, "claw", 67, 0, 0, 180)
 
     def set_enabled(self, enabled: bool):
-        self.motor.enable() if enabled else self.motor.disable()
+        self.servo.set_enabled(enabled)
         self.enabled = enabled
         self.logger.info("Armed" if enabled else "Disarmed")
+        self.rover.communication.send_telemetry({66: int(self.enabled)})
+        if not enabled: self.stop()
 
     def open(self):
         if self.checks():
-            self.motor.set_backward()
-            self.motor.set_speed(self.speed)
-            self.rover.communication.send_telemetry({69: 0})
+            self.servo.turn_clockwise()
+            self.rover.communication.send_telemetry({68: 0})
 
     def stop(self):
-        self.motor.set_speed(0, override=True)
-        self.rover.communication.send_telemetry({69: 1})
+        self.servo.stop_turn()
+        self.rover.communication.send_telemetry({68: 1})
 
     def close(self):
         if self.checks():
-            self.motor.set_forward()
-            self.motor.set_speed(self.speed)
-            self.rover.communication.send_telemetry({69: 2})
+            self.servo.turn_counter_clockwise()
+            self.rover.communication.send_telemetry({68: 2})
 
     def checks(self):
         if self.enabled:
@@ -44,5 +44,5 @@ class Claw:
             return False
 
     def send_all_telem(self):
-        self.rover.communication.send_telemetry({66: self.enabled})
-        self.motor.send_all_telem()
+        self.rover.communication.send_telemetry({66: int(self.enabled)})
+        self.servo.send_all_telem()

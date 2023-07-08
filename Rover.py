@@ -36,7 +36,7 @@ class Rover:
         self.communication.setup()
         self.setup_telem_logging()
 
-        #self.camera = Camera()
+        # self.camera = Camera()
         self.pwm_controller = PwmController()
         self.arm = Arm(self)
         self.movement = Movement(self)
@@ -64,6 +64,8 @@ class Rover:
                 self.logger.debug("Instruction '"+key+"' not found")
 
     def load_control_mappings(self) -> None:
+        self.control_mappings['15'] = self.arm.hatch.set_angle
+        self.control_mappings['14'] = self.arm.claw.servo.set_angle
         self.control_mappings['13'] = self.sensors.sensor_monitoring.set_enabled
         self.control_mappings['12'] = self.decode_key_frame_up
         self.control_mappings['11'] = self.decode_key_frame_down
@@ -92,19 +94,32 @@ class Rover:
             self.logger.debug(("key '"+chr(char)+"_d"+"' not found"))
 
     def load_key_mappings(self) -> None:
-        self.key_mappings["u_d"] = self.arm.yaw.increase_angle
-        self.key_mappings["j_d"] = self.arm.yaw.decrease_angle
-        self.key_mappings["i_d"] = self.arm.pitch1.increase_angle
-        self.key_mappings["k_d"] = self.arm.pitch1.decrease_angle
-        self.key_mappings["o_d"] = self.arm.pitch2.increase_angle
-        self.key_mappings["l_d"] = self.arm.pitch2.decrease_angle
-        self.key_mappings["p_d"] = self.arm.roll.increase_angle
-        self.key_mappings[";_d"] = self.arm.roll.decrease_angle
+        self.key_mappings["u_d"] = self.arm.yaw.turn_clockwise
+        self.key_mappings["u_u"] = self.arm.yaw.stop_turn
+        self.key_mappings["j_d"] = self.arm.yaw.turn_counter_clockwise
+        self.key_mappings["j_u"] = self.arm.yaw.stop_turn
+        self.key_mappings["i_d"] = self.arm.pitch1.turn_clockwise
+        self.key_mappings["i_u"] = self.arm.pitch1.stop_turn
+        self.key_mappings["k_d"] = self.arm.pitch1.turn_counter_clockwise
+        self.key_mappings["k_u"] = self.arm.pitch1.stop_turn
+        self.key_mappings["o_d"] = self.arm.pitch2.turn_clockwise
+        self.key_mappings["o_u"] = self.arm.pitch2.stop_turn
+        self.key_mappings["l_d"] = self.arm.pitch2.turn_counter_clockwise
+        self.key_mappings["l_u"] = self.arm.pitch2.stop_turn
+        self.key_mappings["p_d"] = self.arm.roll.turn_clockwise
+        self.key_mappings["p_u"] = self.arm.roll.stop_turn
+        self.key_mappings[";_d"] = self.arm.roll.turn_counter_clockwise
+        self.key_mappings[";_u"] = self.arm.roll.stop_turn
 
         self.key_mappings["[_d"] = self.arm.claw.open
         self.key_mappings["[_u"] = self.arm.claw.stop
         self.key_mappings["'_d"] = self.arm.claw.close
         self.key_mappings["'_u"] = self.arm.claw.stop
+
+        self.key_mappings["]_d"] = self.arm.hatch.turn_clockwise
+        self.key_mappings["]_u"] = self.arm.hatch.stop_turn
+        self.key_mappings["#_d"] = self.arm.hatch.turn_counter_clockwise
+        self.key_mappings["#_u"] = self.arm.hatch.stop_turn
 
         self.key_mappings["q_d"] = self.movement.left_forward
         self.key_mappings["q_u"] = self.movement.left_stop

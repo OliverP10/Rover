@@ -1,8 +1,6 @@
 from xmlrpc.client import Boolean
 from Servo import Servo
 from Claw import Claw
-from Motor import Motor
-from ClawMotor import ClawMotor
 import logging
 from time import sleep
 from threading import Thread
@@ -40,11 +38,12 @@ class Arm:
         self.sequence_mappings = dict()
         self.current_sequence = ARM_SEQUENCE.STOW
         self.next_sequence = ARM_SEQUENCE.STOW
-        self.yaw = Servo(rover, "yaw", 62, 0, 120, 136)
+        self.yaw = Servo(rover, "yaw", 62, 0, 0, 180)
         self.pitch1 = Servo(rover, "pitch1", 63, 1, 10, 130)
         self.pitch2 = Servo(rover, "pitch2", 64, 2, 0, 180)
         self.roll = Servo(rover, "roll", 65, 3, 0, 180)
         self.claw = Claw(rover, 5, 6, 4)
+        self.hatch = Servo(rover, "hatch", 69, 4, 0, 180)
         self.manual_override = False
         self.lock = threading.Lock()
 
@@ -63,6 +62,7 @@ class Arm:
         self.pitch2.set_enabled(enabled)
         self.roll.set_enabled(enabled)
         self.claw.set_enabled(enabled)
+        self.hatch.set_enabled(enabled)
         self.logger.info("Arm Enabled" if enabled else "Arm Disabled")
         self.enabled = enabled
         self.rover.communication.send_telemetry({"70": int(self.enabled)})
@@ -82,6 +82,8 @@ class Arm:
         self.pitch1.set_angle(30, temp_override=True)
         self.pitch2.set_angle(150, temp_override=True)
         self.roll.set_angle(150, temp_override=True)
+        self.claw.servo.set_angle(150, temp_override=True)
+        self.hatch.set_angle(20, temp_override=True)
         self.logger.info("Arm set to default position")
 
     def execute_sequence(self, sequence_number: int) -> None:
@@ -165,5 +167,6 @@ class Arm:
         self.pitch2.send_all_telem()
         self.roll.send_all_telem()
         self.claw.send_all_telem()
+        self.hatch.send_all_telem()
 
         # connect everything, arm the arm restart server and refresh page and the arm turns green

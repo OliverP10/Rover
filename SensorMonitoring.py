@@ -26,7 +26,7 @@ class SensorMonitoring:
 
     def set_enabled(self, enabled: int):
         self.enabled = bool(enabled)
-        self.rover.communication.send_telemetry({"47": enabled})
+        self.rover.communication.send_telemetry({"47": int(enabled)})
         self.logger.info("STOMP Enabled" if self.enabled else "STOMP Disabled")
 
     def check_sensors_data(self, sensor_data: dict):
