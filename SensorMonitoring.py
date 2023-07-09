@@ -33,10 +33,33 @@ class SensorMonitoring:
         if not self.enabled: return
         for key, value in sensor_data.items():
 
-            if "2" == key and 1 < value < 100:
+            if "80" == key and value > 1:
                 self.disarm_rover(key)
-            elif "2" == key and 1 < value < 100:
+            elif "81" == key and value > 1:
                 self.disarm_rover(key)
+            elif "82" == key and value > 1:
+                self.disarm_rover(key)
+            elif "83" == key and value > 1:
+                self.disarm_rover(key)
+            elif "84" == key and value > 1:
+                self.disarm_rover(key)
+            elif "85" == key and value > 1:
+                self.disarm_rover(key)
+            elif "90" == key and value > 50:
+                self.disarm_rover(key)
+            elif "91" == key and value > 50:
+                self.disarm_rover(key)
+            elif "92" == key and value > 50:
+                self.disarm_rover(key)
+            elif "93" == key and value > 50:
+                self.disarm_rover(key)
+            elif "94" == key and value > 50:
+                self.disarm_rover(key)
+            elif "95" == key and value > 50:
+                self.disarm_rover(key)
+            elif "100" == key and value < 13.2:
+                self.disarm_rover(key)
+ 
 
     def disarm_rover(self, key: str):
         self.logger.warn("STOMP event triggerd on sensor '"+key+"', disarming rover")

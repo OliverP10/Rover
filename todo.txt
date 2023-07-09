@@ -1,4 +1,7 @@
 Re write motor drivers
-Add sesnsors to database
-setup stomp for sensors
-pi usb wifi
+
+USB WiFi setup:
+https://forums.raspberrypi.com/viewtopic.php?t=344732
+
+
+

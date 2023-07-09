@@ -21106,3 +21106,260 @@ serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyACM0: [
 2023-07-08 22:10:49,326 [DEBUG] [Servo] Set claw angle: 124
 2023-07-08 22:10:49,431 [DEBUG] [Servo] Set claw angle: 123
 2023-07-08 22:10:49,536 [DEBUG] [Servo] Set claw angle: 122
+2023-07-08 22:45:12,896 [WARNING] [WifiCommunication] WiFi disconnected
+2023-07-08 22:45:14,181 [DEBUG] [urllib3.connectionpool] Resetting dropped connection: 192.168.0.12
+2023-07-08 22:45:20,701 [DEBUG] [urllib3.connectionpool] Starting new HTTP connection (2): 192.168.0.12:3000
+2023-07-08 22:45:29,370 [DEBUG] [urllib3.connectionpool] Starting new HTTP connection (3): 192.168.0.12:3000
+2023-07-08 22:45:39,177 [DEBUG] [urllib3.connectionpool] Starting new HTTP connection (4): 192.168.0.12:3000
+2023-07-08 22:45:49,502 [DEBUG] [urllib3.connectionpool] Starting new HTTP connection (5): 192.168.0.12:3000
+2023-07-08 22:45:59,175 [DEBUG] [urllib3.connectionpool] Starting new HTTP connection (6): 192.168.0.12:3000
+2023-07-08 22:46:09,220 [DEBUG] [urllib3.connectionpool] Starting new HTTP connection (7): 192.168.0.12:3000
+2023-07-08 22:46:18,842 [DEBUG] [urllib3.connectionpool] Starting new HTTP connection (8): 192.168.0.12:3000
+2023-07-08 22:46:28,592 [DEBUG] [urllib3.connectionpool] Starting new HTTP connection (9): 192.168.0.12:3000
+2023-07-08 22:46:38,638 [DEBUG] [urllib3.connectionpool] Starting new HTTP connection (10): 192.168.0.12:3000
+2023-07-08 22:46:48,983 [DEBUG] [urllib3.connectionpool] Starting new HTTP connection (11): 192.168.0.12:3000
+2023-07-09 13:13:48,460 [INFO] [Rover] Rover starting up...
+2023-07-09 13:13:48,496 [DEBUG] [urllib3.connectionpool] Starting new HTTP connection (1): 192.168.0.12:3000
+2023-07-09 13:13:48,512 [DEBUG] [urllib3.connectionpool] http://192.168.0.12:3000 "GET /socket.io/?transport=polling&EIO=4&t=1688904828.4656632 HTTP/1.1" 200 118
+2023-07-09 13:13:48,537 [INFO] [WifiCommunication] WiFi connected
+2023-07-09 13:13:48,540 [ERROR] [RadioCommunication] Radio COM port error
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/oliver/Documents/Jeet Rover/RadioCommunication.py", line 34, in open_serial_port
+    self.serial_port = Serial('/dev/ttyUSB0',57600,timeout=1)
+  File "/usr/lib/python3/dist-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2023-07-09 13:13:48,633 [INFO] [Claw] Armed
+2023-07-09 13:13:48,649 [INFO] [Arm] Arm Enabled
+2023-07-09 13:13:48,660 [DEBUG] [Servo] Set yaw angle: 17
+2023-07-09 13:13:48,664 [DEBUG] [Servo] Set pitch1 angle: 30
+2023-07-09 13:13:48,671 [DEBUG] [Servo] Set pitch2 angle: 150
+2023-07-09 13:13:48,674 [DEBUG] [Servo] Set roll angle: 150
+2023-07-09 13:13:48,677 [DEBUG] [Servo] Set claw angle: 150
+2023-07-09 13:13:48,681 [DEBUG] [Servo] Set hatch angle: 20
+2023-07-09 13:13:48,682 [INFO] [Arm] Arm set to default position
+2023-07-09 13:13:48,693 [INFO] [Claw] Disarmed
+2023-07-09 13:13:48,697 [INFO] [Arm] Arm Disabled
+2023-07-09 13:13:48,710 [INFO] [Movement] Movment Enabled
+2023-07-09 13:13:48,714 [ERROR] [Sensors] Sensor COM port error
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/oliver/Documents/Jeet Rover/Sensors.py", line 36, in open_serial_port
+    self.serial_port = Serial('/dev/ttyACM0',57600,timeout=1)
+  File "/usr/lib/python3/dist-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2023-07-09 13:13:48,733 [INFO] [Rover] Rover start up complete
+2023-07-09 13:14:05,262 [INFO] [SensorMonitoring] STOMP Enabled
+2023-07-09 13:14:16,507 [INFO] [SensorMonitoring] STOMP Disabled
+2023-07-09 13:21:28,238 [WARNING] [WifiCommunication] WiFi disconnected
+2023-07-09 13:21:30,818 [INFO] [Rover] Rover starting up...
+2023-07-09 13:21:30,834 [DEBUG] [urllib3.connectionpool] Starting new HTTP connection (1): 192.168.0.12:3000
+2023-07-09 13:21:30,844 [DEBUG] [urllib3.connectionpool] http://192.168.0.12:3000 "GET /socket.io/?transport=polling&EIO=4&t=1688905290.819986 HTTP/1.1" 200 118
+2023-07-09 13:21:30,869 [INFO] [WifiCommunication] WiFi connected
+2023-07-09 13:21:30,873 [ERROR] [RadioCommunication] Radio COM port error
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/oliver/Documents/Jeet Rover/RadioCommunication.py", line 34, in open_serial_port
+    self.serial_port = Serial('/dev/ttyUSB0',57600,timeout=1)
+  File "/usr/lib/python3/dist-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2023-07-09 13:21:30,956 [INFO] [Claw] Armed
+2023-07-09 13:21:30,967 [INFO] [Arm] Arm Enabled
+2023-07-09 13:21:30,974 [DEBUG] [Servo] Set yaw angle: 17
+2023-07-09 13:21:30,980 [DEBUG] [Servo] Set pitch1 angle: 30
+2023-07-09 13:21:30,986 [DEBUG] [Servo] Set pitch2 angle: 150
+2023-07-09 13:21:30,991 [DEBUG] [Servo] Set roll angle: 150
+2023-07-09 13:21:30,997 [DEBUG] [Servo] Set claw angle: 150
+2023-07-09 13:21:31,002 [DEBUG] [Servo] Set hatch angle: 20
+2023-07-09 13:21:31,004 [INFO] [Arm] Arm set to default position
+2023-07-09 13:21:31,019 [INFO] [Claw] Disarmed
+2023-07-09 13:21:31,027 [INFO] [Arm] Arm Disabled
+2023-07-09 13:21:31,043 [INFO] [Movement] Movment Enabled
+2023-07-09 13:21:31,057 [INFO] [Sensors] Sensor COM port opened
+2023-07-09 13:21:31,066 [INFO] [Rover] Rover start up complete
+2023-07-09 13:22:13,501 [WARNING] [WifiCommunication] WiFi disconnected
+2023-07-09 13:26:14,681 [INFO] [Rover] Rover starting up...
+2023-07-09 13:26:14,697 [DEBUG] [urllib3.connectionpool] Starting new HTTP connection (1): 192.168.0.12:3000
+2023-07-09 13:26:14,707 [DEBUG] [urllib3.connectionpool] http://192.168.0.12:3000 "GET /socket.io/?transport=polling&EIO=4&t=1688905574.683816 HTTP/1.1" 200 118
+2023-07-09 13:26:14,731 [INFO] [WifiCommunication] WiFi connected
+2023-07-09 13:26:14,734 [ERROR] [RadioCommunication] Radio COM port error
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/oliver/Documents/Jeet Rover/RadioCommunication.py", line 34, in open_serial_port
+    self.serial_port = Serial('/dev/ttyUSB0',57600,timeout=1)
+  File "/usr/lib/python3/dist-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2023-07-09 13:26:14,823 [INFO] [Claw] Armed
+2023-07-09 13:26:14,836 [INFO] [Arm] Arm Enabled
+2023-07-09 13:26:14,842 [DEBUG] [Servo] Set yaw angle: 17
+2023-07-09 13:26:14,848 [DEBUG] [Servo] Set pitch1 angle: 30
+2023-07-09 13:26:14,853 [DEBUG] [Servo] Set pitch2 angle: 150
+2023-07-09 13:26:14,860 [DEBUG] [Servo] Set roll angle: 150
+2023-07-09 13:26:14,864 [DEBUG] [Servo] Set claw angle: 150
+2023-07-09 13:26:14,868 [DEBUG] [Servo] Set hatch angle: 20
+2023-07-09 13:26:14,870 [INFO] [Arm] Arm set to default position
+2023-07-09 13:26:14,881 [INFO] [Claw] Disarmed
+2023-07-09 13:26:14,885 [INFO] [Arm] Arm Disabled
+2023-07-09 13:26:14,895 [INFO] [Movement] Movment Enabled
+2023-07-09 13:26:14,905 [INFO] [Sensors] Sensor COM port opened
+2023-07-09 13:26:14,937 [INFO] [Rover] Rover start up complete
+2023-07-09 13:27:31,026 [INFO] [Movement] Movment Disabled
+2023-07-09 13:27:31,582 [INFO] [Movement] Movment Enabled
+2023-07-09 13:27:32,468 [INFO] [SensorMonitoring] STOMP Enabled
+2023-07-09 13:27:32,874 [WARNING] [SensorMonitoring] STOMP event triggerd on sensor '81', disarming rover
+2023-07-09 13:27:32,886 [INFO] [Claw] Disarmed
+2023-07-09 13:27:32,891 [INFO] [Arm] Arm Disabled
+2023-07-09 13:27:32,898 [INFO] [Movement] Movment Disabled
+2023-07-09 13:27:32,903 [WARNING] [SensorMonitoring] STOMP event triggerd on sensor '82', disarming rover
+2023-07-09 13:27:32,915 [INFO] [Claw] Disarmed
+2023-07-09 13:27:32,919 [INFO] [Arm] Arm Disabled
+2023-07-09 13:27:32,926 [INFO] [Movement] Movment Disabled
+2023-07-09 13:27:36,892 [WARNING] [SensorMonitoring] STOMP event triggerd on sensor '81', disarming rover
+2023-07-09 13:27:36,903 [INFO] [Claw] Disarmed
+2023-07-09 13:27:36,907 [INFO] [Arm] Arm Disabled
+2023-07-09 13:27:36,912 [INFO] [Movement] Movment Disabled
+2023-07-09 13:27:43,995 [INFO] [Movement] Movment Enabled
+2023-07-09 13:27:46,774 [INFO] [Claw] Armed
+2023-07-09 13:27:46,778 [INFO] [Arm] Arm Enabled
+2023-07-09 13:27:48,946 [WARNING] [SensorMonitoring] STOMP event triggerd on sensor '80', disarming rover
+2023-07-09 13:27:48,957 [INFO] [Claw] Disarmed
+2023-07-09 13:27:48,964 [INFO] [Arm] Arm Disabled
+2023-07-09 13:27:48,973 [INFO] [Movement] Movment Disabled
+2023-07-09 13:27:51,960 [WARNING] [SensorMonitoring] STOMP event triggerd on sensor '82', disarming rover
+2023-07-09 13:27:51,971 [INFO] [Claw] Disarmed
+2023-07-09 13:27:51,975 [INFO] [Arm] Arm Disabled
+2023-07-09 13:27:51,979 [INFO] [Movement] Movment Disabled
+2023-07-09 13:27:52,964 [WARNING] [SensorMonitoring] STOMP event triggerd on sensor '82', disarming rover
+2023-07-09 13:27:52,975 [INFO] [Claw] Disarmed
+2023-07-09 13:27:52,979 [INFO] [Arm] Arm Disabled
+2023-07-09 13:27:52,984 [INFO] [Movement] Movment Disabled
+2023-07-09 13:27:54,974 [WARNING] [SensorMonitoring] STOMP event triggerd on sensor '84', disarming rover
+2023-07-09 13:27:54,985 [INFO] [Claw] Disarmed
+2023-07-09 13:27:54,989 [INFO] [Arm] Arm Disabled
+2023-07-09 13:27:54,994 [INFO] [Movement] Movment Disabled
+2023-07-09 13:27:55,978 [WARNING] [SensorMonitoring] STOMP event triggerd on sensor '80', disarming rover
+2023-07-09 13:27:55,989 [INFO] [Claw] Disarmed
+2023-07-09 13:27:55,993 [INFO] [Arm] Arm Disabled
+2023-07-09 13:27:55,999 [INFO] [Movement] Movment Disabled
+2023-07-09 13:28:03,010 [WARNING] [SensorMonitoring] STOMP event triggerd on sensor '80', disarming rover
+2023-07-09 13:28:03,020 [INFO] [Claw] Disarmed
+2023-07-09 13:28:03,025 [INFO] [Arm] Arm Disabled
+2023-07-09 13:28:03,029 [INFO] [Movement] Movment Disabled
+2023-07-09 13:28:03,634 [INFO] [SensorMonitoring] STOMP Disabled
+2023-07-09 13:28:18,780 [INFO] [Movement] Movment Enabled
+2023-07-09 13:28:19,665 [INFO] [Claw] Armed
+2023-07-09 13:28:19,672 [INFO] [Arm] Arm Enabled
+2023-07-09 13:28:20,917 [INFO] [SensorMonitoring] STOMP Enabled
+2023-07-09 13:28:21,090 [WARNING] [SensorMonitoring] STOMP event triggerd on sensor '84', disarming rover
+2023-07-09 13:28:21,101 [INFO] [Claw] Disarmed
+2023-07-09 13:28:21,105 [INFO] [Arm] Arm Disabled
+2023-07-09 13:28:21,108 [INFO] [Movement] Movment Disabled
+2023-07-09 13:28:22,096 [WARNING] [SensorMonitoring] STOMP event triggerd on sensor '81', disarming rover
+2023-07-09 13:28:22,106 [INFO] [Claw] Disarmed
+2023-07-09 13:28:22,110 [INFO] [Arm] Arm Disabled
+2023-07-09 13:28:22,114 [INFO] [Movement] Movment Disabled
+2023-07-09 13:28:26,115 [WARNING] [SensorMonitoring] STOMP event triggerd on sensor '81', disarming rover
+2023-07-09 13:28:26,127 [INFO] [Claw] Disarmed
+2023-07-09 13:28:26,135 [INFO] [Arm] Arm Disabled
+2023-07-09 13:28:26,145 [INFO] [Movement] Movment Disabled
+2023-07-09 13:28:36,159 [WARNING] [SensorMonitoring] STOMP event triggerd on sensor '81', disarming rover
+2023-07-09 13:28:36,169 [INFO] [Claw] Disarmed
+2023-07-09 13:28:36,172 [INFO] [Arm] Arm Disabled
+2023-07-09 13:28:36,176 [INFO] [Movement] Movment Disabled
+2023-07-09 13:28:36,179 [WARNING] [SensorMonitoring] STOMP event triggerd on sensor '85', disarming rover
+2023-07-09 13:28:36,192 [INFO] [Claw] Disarmed
+2023-07-09 13:28:36,196 [INFO] [Arm] Arm Disabled
+2023-07-09 13:28:36,199 [INFO] [Movement] Movment Disabled
+2023-07-09 13:28:38,168 [WARNING] [SensorMonitoring] STOMP event triggerd on sensor '80', disarming rover
+2023-07-09 13:28:38,180 [INFO] [Claw] Disarmed
+2023-07-09 13:28:38,185 [INFO] [Arm] Arm Disabled
+2023-07-09 13:28:38,190 [INFO] [Movement] Movment Disabled
+2023-07-09 13:28:39,313 [INFO] [SensorMonitoring] STOMP Disabled
+2023-07-09 13:29:11,701 [WARNING] [WifiCommunication] WiFi disconnected
+2023-07-09 14:56:51,964 [INFO] [Rover] Rover starting up...
+2023-07-09 14:56:51,988 [DEBUG] [urllib3.connectionpool] Starting new HTTP connection (1): 192.168.0.12:3000
+2023-07-09 14:56:52,005 [DEBUG] [urllib3.connectionpool] http://192.168.0.12:3000 "GET /socket.io/?transport=polling&EIO=4&t=1688911011.9724247 HTTP/1.1" 200 118
+2023-07-09 14:56:52,036 [INFO] [WifiCommunication] WiFi connected
+2023-07-09 14:56:52,039 [ERROR] [RadioCommunication] Radio COM port error
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/oliver/Documents/Jeet Rover/RadioCommunication.py", line 34, in open_serial_port
+    self.serial_port = Serial('/dev/ttyUSB0',57600,timeout=1)
+  File "/usr/lib/python3/dist-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2023-07-09 14:56:52,135 [INFO] [Claw] Armed
+2023-07-09 14:56:52,142 [INFO] [Arm] Arm Enabled
+2023-07-09 14:56:52,146 [DEBUG] [Servo] Set yaw angle: 17
+2023-07-09 14:56:52,150 [DEBUG] [Servo] Set pitch1 angle: 30
+2023-07-09 14:56:52,154 [DEBUG] [Servo] Set pitch2 angle: 150
+2023-07-09 14:56:52,157 [DEBUG] [Servo] Set roll angle: 150
+2023-07-09 14:56:52,161 [DEBUG] [Servo] Set claw angle: 150
+2023-07-09 14:56:52,166 [DEBUG] [Servo] Set hatch angle: 20
+2023-07-09 14:56:52,167 [INFO] [Arm] Arm set to default position
+2023-07-09 14:56:52,179 [INFO] [Claw] Disarmed
+2023-07-09 14:56:52,183 [INFO] [Arm] Arm Disabled
+2023-07-09 14:56:52,194 [INFO] [Movement] Movment Enabled
+2023-07-09 14:56:52,198 [ERROR] [Sensors] Sensor COM port error
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/ttyACM0'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/oliver/Documents/Jeet Rover/Sensors.py", line 36, in open_serial_port
+    self.serial_port = Serial('/dev/ttyACM0',57600,timeout=1)
+  File "/usr/lib/python3/dist-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2023-07-09 14:56:52,213 [INFO] [Rover] Rover start up complete
+2023-07-09 14:56:54,811 [INFO] [Movement] Movment Disabled
+2023-07-09 14:56:55,595 [INFO] [Movement] Movment Enabled
