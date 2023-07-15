@@ -38,17 +38,18 @@ class Arm:
         self.sequence_mappings = dict()
         self.current_sequence = ARM_SEQUENCE.STOW
         self.next_sequence = ARM_SEQUENCE.STOW
-        self.yaw = Servo(rover, "yaw", 62, 0, 0, 180)
-        self.pitch1 = Servo(rover, "pitch1", 63, 1, 10, 130)
-        self.pitch2 = Servo(rover, "pitch2", 64, 2, 0, 180)
-        self.roll = Servo(rover, "roll", 65, 3, 0, 180)
-        self.claw = Claw(rover, 5, 6, 4)
+        self.yaw = Servo(rover, "yaw", 62, 5, 0, 180)
+        self.pitch1 = Servo(rover, "pitch1", 63, 0, 20, 180)
+        self.pitch2 = Servo(rover, "pitch2", 64, 1, 15, 152)
+        self.roll = Servo(rover, "roll", 65, 2, 2, 180)
+        self.claw = Claw(rover, "claw", 67, 3, 35, 85)
         self.hatch = Servo(rover, "hatch", 69, 4, 0, 180)
         self.manual_override = False
         self.lock = threading.Lock()
 
+    def setup(self):
         self.set_start_position()
-        self.set_enabled(False)
+        # self.set_enabled(False)
         self.load_sequence_mappings()
 
     def load_sequence_mappings(self) -> None:
@@ -72,18 +73,19 @@ class Arm:
         self.pitch1.set_permanent_override(enabled)
         self.pitch2.set_permanent_override(enabled)
         self.roll.set_permanent_override(enabled)
+        self.claw.servo.set_permanent_override(enabled)
         self.manual_override = enabled
         self.logger.warning("Manual override enabled" if enabled else "Manual override disabled")
         self.rover.communication.send_telemetry({"71": int(self.manual_override)})
 
     def set_start_position(self):
         self.set_enabled(True)
-        self.yaw.set_angle(17, temp_override=True)
-        self.pitch1.set_angle(30, temp_override=True)
-        self.pitch2.set_angle(150, temp_override=True)
-        self.roll.set_angle(150, temp_override=True)
-        self.claw.servo.set_angle(150, temp_override=True)
-        self.hatch.set_angle(20, temp_override=True)
+        self.yaw.set_angle(0, temp_override=True)
+        self.pitch1.set_angle(55, temp_override=True)
+        self.pitch2.set_angle(15, temp_override=True)
+        self.roll.set_angle(10, temp_override=True)
+        self.claw.servo.set_angle(35, temp_override=True)
+        self.hatch.set_angle(0, temp_override=True)
         self.logger.info("Arm set to default position")
 
     def execute_sequence(self, sequence_number: int) -> None:
@@ -119,11 +121,10 @@ class Arm:
             self.logger.info("Executing sequence: "+str(ARM_SEQUENCE.STORE))
             self.next_sequence = str(ARM_SEQUENCE.STORE)
             self.rover.communication.send_telemetry({"73": int(ARM_SEQUENCE.STORE)})
-            self.yaw.set_angle(17, temp_override=True)
-            self.pitch1.set_angle(30, temp_override=True)
-            self.pitch1.set_angle_with_delay(120, 1, 0.1)
-            self.yaw.set_angle_with_delay(130, 1, 0.1)
-            self.pitch1.set_angle_with_delay(60, 1, 0.1)
+            self.pitch1.set_angle_with_delay(55, 2, 0.05)
+            self.pitch2.set_angle_with_delay(150, 2, 0.05)
+            self.roll.set_angle_with_delay(10, 2, 0.05)
+
             self.current_sequence = ARM_SEQUENCE.STORE
             self.rover.communication.send_telemetry({"72": int(ARM_SEQUENCE.STORE)})
             self.logger.info("Finished executing sequence: "+str(ARM_SEQUENCE.STORE))
@@ -134,9 +135,10 @@ class Arm:
             self.logger.info("Executing sequence: "+str(ARM_SEQUENCE.DEPLOY))
             self.next_sequence = str(ARM_SEQUENCE.DEPLOY)
             self.rover.communication.send_telemetry({"73": int(ARM_SEQUENCE.DEPLOY)})
-            self.pitch1.set_angle_with_delay(120, 1, 0.1)
-            self.yaw.set_angle_with_delay(17, 1, 0.1)
-            self.pitch1.set_angle_with_delay(100, 1, 0.1)
+            self.pitch1.set_angle_with_delay(100, 2, 0.05)
+            self.pitch1.set_angle_with_delay(125, 2, 0.05)
+            self.roll.set_angle_with_delay(95, 2, 0.05)
+            
             self.current_sequence = ARM_SEQUENCE.DEPLOY
             self.rover.communication.send_telemetry({"72": int(ARM_SEQUENCE.DEPLOY)})
             self.logger.info("Finished executing sequence: "+str(ARM_SEQUENCE.DEPLOY))
@@ -147,11 +149,10 @@ class Arm:
             self.logger.info("Executing sequence: "+str(ARM_SEQUENCE.STOW))
             self.next_sequence = str(ARM_SEQUENCE.STOW)
             self.rover.communication.send_telemetry({"73": int(ARM_SEQUENCE.STOW)})
-            self.yaw.set_angle(17, temp_override=True)
-            self.pitch1.set_angle(30, temp_override=True)
-            self.pitch1.set_angle_with_delay(120, 1, 0.1)
-            self.yaw.set_angle_with_delay(130, 1, 0.1)
-            self.pitch1.set_angle_with_delay(60, 1, 0.1)
+            self.pitch1.set_angle_with_delay(55, 2, 0.05)
+            self.pitch2.set_angle_with_delay(15, 2, 0.05)
+            self.roll.set_angle_with_delay(10, 2, 0.05)
+            
             self.current_sequence = ARM_SEQUENCE.STOW
             self.rover.communication.send_telemetry({"72": int(ARM_SEQUENCE.STOW)})
             self.logger.info("Finished executing sequence: "+str(ARM_SEQUENCE.STOW))

@@ -8,12 +8,12 @@ class Claw:
     servo: Servo
     speed: int
 
-    def __init__(self, rover, input_one: int, input_two: int, pwm_pin: int) -> None:
+    def __init__(self, rover: any, name: str, telemetry_id: int, pin: int, min: int, max: int) -> None:
         self.logger = logging.getLogger(__name__)
         self.rover = rover
         self.enabled = False
         self.speed = 1
-        self.servo = Servo(rover, "claw", 67, 0, 0, 180)
+        self.servo = Servo(rover, "claw", telemetry_id, pin, min, max)
 
     def set_enabled(self, enabled: bool):
         self.servo.set_enabled(enabled)

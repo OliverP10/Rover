@@ -2,6 +2,3 @@ Re write motor drivers
 
 USB WiFi setup:
 https://forums.raspberrypi.com/viewtopic.php?t=344732
-
-
-

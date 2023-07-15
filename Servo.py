@@ -61,6 +61,9 @@ class Servo:
             self.logger.warn("Arm '"+self.name+"' limit reached")
             self.logger.debug("{min} < {angle} < {max}".format(min=self.min, angle=angle, max=self.max))
             check_passed = False
+        elif self.rover.arm.current_sequence.value != 1 and (not temp_override) and (not self.permanent_overide):
+            self.logger.warn("Can not move servo unless arm is deployed, current state: "+str(self.rover.arm.current_sequence))
+            check_passed = False
 
         if check_passed:
             self.rover.pwm_controller.set_servo(self.pin, angle)
@@ -111,8 +114,11 @@ class Servo:
 
     def set_enabled(self, enabled: bool):
         self.enabled = enabled
-        self.rover.pwm_controller.set_no_pulse(self.pin)
-        if not enabled: self.stop_turn()
+        if enabled:
+            self.set_angle(self.position)
+        else:
+            self.rover.pwm_controller.set_no_pulse(self.pin)
+            self.stop_turn()
 
     def turn_clockwise(self):
         self.run_counter_clockwise.clear()

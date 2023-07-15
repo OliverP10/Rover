@@ -19,7 +19,7 @@ class Rover:
     communication: Communicaition
     camera: Camera
     sensors: Sensors
-    #pwm_controller: PwmController
+    pwm_controller: PwmController
     movement: Movement
     arm: Arm
     control_mappings: dict
@@ -36,9 +36,10 @@ class Rover:
         self.communication.setup()
         self.setup_telem_logging()
 
-        # self.camera = Camera()
+        self.camera = Camera()
         self.pwm_controller = PwmController()
         self.arm = Arm(self)
+        self.arm.setup()
         self.movement = Movement(self)
         self.sensors = Sensors(self)
         self.sensors.setup()
