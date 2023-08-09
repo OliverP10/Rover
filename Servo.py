@@ -61,9 +61,6 @@ class Servo:
             self.logger.warn("Arm '"+self.name+"' limit reached")
             self.logger.debug("{min} < {angle} < {max}".format(min=self.min, angle=angle, max=self.max))
             check_passed = False
-        elif self.rover.arm.current_sequence.value != 1 and (not temp_override) and (not self.permanent_overide):
-            self.logger.warn("Can not move servo unless arm is deployed, current state: "+str(self.rover.arm.current_sequence))
-            check_passed = False
 
         if check_passed:
             self.rover.pwm_controller.set_servo(self.pin, angle)

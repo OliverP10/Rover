@@ -36,7 +36,7 @@ class Rover:
         self.communication.setup()
         self.setup_telem_logging()
 
-        self.camera = Camera()
+        # self.camera = Camera()
         self.pwm_controller = PwmController()
         self.arm = Arm(self)
         self.arm.setup()
@@ -65,15 +65,17 @@ class Rover:
                 self.logger.debug("Instruction '"+key+"' not found")
 
     def load_control_mappings(self) -> None:
+        self.control_mappings['18'] = self.movement.run_steering_mode
+        self.control_mappings['17'] = self.movement.set_steering_mode
         self.control_mappings['15'] = self.arm.hatch.set_angle
-        self.control_mappings['14'] = self.arm.claw.servo.set_angle
+        self.control_mappings['14'] = self.arm.set_claw
         self.control_mappings['13'] = self.sensors.sensor_monitoring.set_enabled
         self.control_mappings['12'] = self.decode_key_frame_up
         self.control_mappings['11'] = self.decode_key_frame_down
-        self.control_mappings['10'] = self.arm.yaw.set_angle                                    # arm yaw
-        self.control_mappings['9'] = self.arm.pitch1.set_angle                                  # arm pitch 1
-        self.control_mappings['8'] = self.arm.pitch2.set_angle                                  # arm pitch 2
-        self.control_mappings['7'] = self.arm.roll.set_angle                                    # arm roll
+        self.control_mappings['10'] = self.arm.set_yaw                                          # arm yaw
+        self.control_mappings['9'] = self.arm.set_pitch1                                        # arm pitch 1
+        self.control_mappings['8'] = self.arm.set_pitch2                                        # arm pitch 2
+        self.control_mappings['7'] = self.arm.set_roll                                          # arm roll
         self.control_mappings['6'] = self.arm.execute_sequence                                  # arm sequence
         self.control_mappings['5'] = self.arm.set_enabled                                       # arm armed
         self.control_mappings['4'] = self.arm.set_manual_override                               # arm override

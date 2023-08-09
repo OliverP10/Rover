@@ -158,6 +158,36 @@ class Arm:
             self.logger.info("Finished executing sequence: "+str(ARM_SEQUENCE.STOW))
         self.lock.release()
 
+    def checks(self):
+        check_passed = True
+
+        if self.rover.arm.current_sequence.value != 1 and (not self.manual_override) :
+            self.logger.warn("Can not move servo unless arm is deployed, current state: "+str(self.rover.arm.current_sequence))
+            check_passed = False
+
+    def set_yaw(self, angle: int):
+        if self.checks():
+            self.yaw.set_angle(angle)
+
+    def set_pitch1(self, angle: int):
+        if self.checks():
+            self.pitch1.set_angle(angle)
+
+    def set_pitch2(self, angle: int):
+        if self.checks():
+            self.pitch2.set_angle(angle)
+
+    def set_roll(self, angle: int):
+        if self.checks():
+            self.roll.set_angle(angle)
+
+    def set_claw(self, angle: int):
+        if self.checks():
+            self.claw.servo.set_angle(angle)
+
+    def set_hatch(self, angle: int):
+        self.hatch.set_angle(angle)
+
     def send_all_telem(self):
         self.rover.communication.send_telemetry({"70": int(self.enabled)})
         self.rover.communication.send_telemetry({"71": int(self.manual_override)})
