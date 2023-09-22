@@ -25,10 +25,11 @@ class Sensors:
     def __init__(self, rover) -> None:
         self.rover = rover
         self.sensor_monitoring = SensorMonitoring(self.rover)
+        self.sensor_monitoring.set_enabled(True)
 
     def setup(self):
         self.open_serial_port()
-        self.thread: Thread = Thread(target=self.radio_read,args=())
+        self.thread: Thread = Thread(target=self.sensor_read,args=())
         self.thread.start()
 
     def open_serial_port(self):
@@ -45,7 +46,7 @@ class Sensors:
         self.open_serial_port()
 
 
-    def radio_read(self):
+    def sensor_read(self):
         while self.running:
             if(self.serial_port.in_waiting > 3):
                 sensor_data: json = None

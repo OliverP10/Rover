@@ -57,14 +57,25 @@ class Motor:
     def set_forward(self):
         if (self.enabled):
             self.forwards = True
+            self.pwm_a.ChangeDutyCycle(self.speed*100)
+            self.pwm_b.ChangeDutyCycle(0)
             self.rover.communication.send_telemetry({self.telemetry_id+self.forwards_telemetry_offset: int(True)})
 
     def set_backward(self):
         if (self.enabled):
             self.forwards = False
+            self.pwm_a.ChangeDutyCycle(0)
+            self.pwm_b.ChangeDutyCycle(self.speed*100)
             self.rover.communication.send_telemetry({self.telemetry_id+self.forwards_telemetry_offset: int(False)})
 
+    def set_inverse_direction(self):
+        if self.forwards:
+            self.set_backward()
+        else:
+            self.set_forward()
+
     def set_speed(self, speed: float, override: bool = False):
+        speed = min(speed, 0.4)
         if (self.enabled or override):
             self.speed = speed
             

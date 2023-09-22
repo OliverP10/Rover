@@ -33,17 +33,17 @@ class SensorMonitoring:
         if not self.enabled: return
         for key, value in sensor_data.items():
 
-            if "80" == key and value > 1:
+            if "80" == key and value > 1.5:
                 self.disarm_rover(key)
-            elif "81" == key and value > 1:
+            elif "81" == key and value > 1.5:
                 self.disarm_rover(key)
-            elif "82" == key and value > 1:
+            elif "82" == key and value > 1.5:
                 self.disarm_rover(key)
-            elif "83" == key and value > 1:
+            elif "83" == key and value > 1.5:
                 self.disarm_rover(key)
-            elif "84" == key and value > 1:
+            elif "84" == key and value > 1.5:
                 self.disarm_rover(key)
-            elif "85" == key and value > 1:
+            elif "85" == key and value > 1.5:
                 self.disarm_rover(key)
             elif "90" == key and value > 50:
                 self.disarm_rover(key)
@@ -58,6 +58,22 @@ class SensorMonitoring:
             elif "95" == key and value > 50:
                 self.disarm_rover(key)
             elif "100" == key and value < 13.2:
+                self.disarm_rover(key)
+            elif "110" == key and value > 1.5:
+                self.disarm_rover(key)
+            elif "111" == key and value > 1.5:
+                self.disarm_rover(key)
+            elif "112" == key and value > 1.5:
+                self.disarm_rover(key)
+            elif "113" == key and value > 1.5:
+                self.disarm_rover(key)
+            elif "120" == key and value > 3:  # Motor 1
+                self.disarm_rover(key)
+            elif "121" == key and value > 3:  # Motor 2
+                self.disarm_rover(key)
+            elif "122" == key and value > 3:  # Motor 3
+                self.disarm_rover(key)
+            elif "123" == key and value > 3:  # Motor 4
                 self.disarm_rover(key)
  
 

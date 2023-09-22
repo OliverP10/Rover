@@ -74,7 +74,7 @@ class Camera:
             allow_reuse_address = True
             daemon_threads = True
 
-        with picamera.PiCamera(resolution='640x480', framerate=30) as camera:
+        with picamera.PiCamera(resolution='640x480', framerate=30) as camera: # 1280x720 640x480
             output = StreamingOutput()
             #Uncomment the next line to change your Pi's Camera rotation (in degrees)
             camera.rotation =0

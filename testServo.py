@@ -13,19 +13,30 @@ kit = ServoKit(channels=16)
 pca = PCA9685(busio.I2C(board.SCL, board.SDA))
 pca.frequency = 50  # Set the desired frequency
 
-pin = 1
+pin = 3
 
 kit.servo[pin].actuation_range = 180
-kit.servo[pin].set_pulse_width_range(500, 2600)
+kit.servo[pin].set_pulse_width_range(500, 2500)
+
+
+def convert_angle(angle):
+    angle = (angle + 45) % 360
+
+    if not 0 <= angle <= 180:
+        angle -= 180
+    return angle
 
 
 while True:
-    number = float(input())
+    #pin = int(input())
+    angle = int(input())
 
-    if number == -1:
+    if angle == -1:
         kit.servo[pin].angle = None
+        #kit.servo[pin].duty_cycle = 0
         print("setting no pulse")
     else:
-        kit.servo[pin].angle = number  
-        print("set number to: "+str(number))
+        kit.servo[pin].angle = convert_angle(angle)  
+        print("set number to: "+str(convert_angle(angle) ))
+
 
