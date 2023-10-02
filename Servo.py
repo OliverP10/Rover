@@ -53,7 +53,7 @@ class Servo:
             check_passed = False
         elif ((self.position == angle) and (not temp_override) and (not self.permanent_overide)):
             self.logger.debug("Angle already set")
-            check_passed = False
+            # check_passed = False
         elif ((not (time.time()-self.update_rate > self.last_triggered)) and (not temp_override) and (not self.permanent_overide)):  # rate limiter
             self.logger.debug("Rate limit reached")
             check_passed = False
@@ -114,8 +114,8 @@ class Servo:
         if enabled:
             self.set_angle(self.position)
         else:
-            self.rover.pwm_controller.set_no_pulse(self.pin)
             self.stop_turn()
+            self.rover.pwm_controller.set_no_pulse(self.pin)
 
     def turn_clockwise(self):
         self.run_counter_clockwise.clear()

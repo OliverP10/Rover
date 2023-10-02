@@ -67,13 +67,13 @@ class SensorMonitoring:
                 self.disarm_rover(key)
             elif "113" == key and value > 1.5:
                 self.disarm_rover(key)
-            elif "120" == key and value > 3:  # Motor 1
+            elif "120" == key and value > 0.5:  # Motor 1
                 self.disarm_rover(key)
-            elif "121" == key and value > 3:  # Motor 2
+            elif "121" == key and value > 0.5:  # Motor 2
                 self.disarm_rover(key)
-            elif "122" == key and value > 3:  # Motor 3
+            elif "122" == key and value > 0.5:  # Motor 3
                 self.disarm_rover(key)
-            elif "123" == key and value > 3:  # Motor 4
+            elif "123" == key and value > 0.5:  # Motor 4
                 self.disarm_rover(key)
  
 

@@ -23,10 +23,10 @@ class Movement:
     def __init__(self, rover) -> None:
         self.logger = logging.getLogger(__name__)
         self.rover = rover
-        self.motor_one = Motor(rover, "motor_one", 50,  5, 0)
-        self.motor_two = Motor(rover, "motor_two", 53,  19, 6)
-        self.motor_three = Motor(rover, "motor_three", 56, 25, 7)
-        self.motor_four = Motor(rover, "motor_four", 59, 21, 20)
+        self.motor_one = Motor(rover, "motor_one", 50,  19, 26)
+        self.motor_two = Motor(rover, "motor_two", 53,  12, 16)
+        self.motor_three = Motor(rover, "motor_three", 56, 8, 7)
+        self.motor_four = Motor(rover, "motor_four", 59, 1, 13)
 
         self.steering_mode = 0
         self.steering = 0

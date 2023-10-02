@@ -2,20 +2,20 @@ import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
 
-pin_channel_1 = 12
-pin_channel_2 = 6
+pwm_channel_pin = 12 #19
+dir_channel_pin = 16 #26
 
-GPIO.setup(pin_channel_1, GPIO.OUT)
-GPIO.setup(pin_channel_2, GPIO.OUT)
+GPIO.setup(pwm_channel_pin, GPIO.OUT)
+GPIO.setup(dir_channel_pin, GPIO.OUT)
 
-pwm_channel_1 = GPIO.PWM(pin_channel_1, 500)
-pwm_channel_2 = GPIO.PWM(pin_channel_2, 500)
+pwm_channel = GPIO.PWM(pwm_channel_pin, 500)
+# dir_channel = GPIO.PWM(dir_channel_pin, 500)
 
-pwm_channel_1.start(0.5)
-pwm_channel_2.start(0.5)
+
+pwm_channel.start(0)
+GPIO.output(dir_channel_pin, GPIO.HIGH)
 
 print("Running: ")
 while True:
     speed = float(input())
-    pwm_channel_1.ChangeDutyCycle(speed*100)
-    pwm_channel_2.ChangeDutyCycle(speed*100)
+    pwm_channel.ChangeDutyCycle(speed*100)

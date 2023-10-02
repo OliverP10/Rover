@@ -6,10 +6,10 @@ class Motor:
     logger: any
     rover: any
 
-    pwm_pin_a: int
-    pwm_pin_b: int
-    pwm_a: any
-    pwm_b: any
+    pwm_pin: int
+    dir_pin: int
+    pwm_speed: any
+    dir_pin: any
 
     name: str
     telemetry_id: int
@@ -17,13 +17,13 @@ class Motor:
     forwards: bool
     speed: float
 
-    def __init__(self, rover: any, name: str, telemetry_id: int, pwm_pin_a: int, pwm_pin_b: int) -> None:
+    def __init__(self, rover: any, name: str, telemetry_id: int, pwm_pin: int, dir_pin: int) -> None:
         self.logger = logging.getLogger(__name__)
         self.rover = rover
         self.name = name
         self.telemetry_id = telemetry_id
-        self.pwm_pin_a = pwm_pin_a
-        self.pwm_pin_b = pwm_pin_b
+        self.pwm_pin = pwm_pin
+        self.dir_pin = dir_pin
         self.enabled = True
         self.forwards = True
         self.speed = 0
@@ -36,12 +36,10 @@ class Motor:
         self.disable()
 
     def setup(self):
-        GPIO.setup(self.pwm_pin_a, GPIO.OUT)
-        GPIO.setup(self.pwm_pin_b, GPIO.OUT)
-        self.pwm_a = GPIO.PWM(self.pwm_pin_a, 500)
-        self.pwm_b = GPIO.PWM(self.pwm_pin_b, 500)
-        self.pwm_a.start(0)
-        self.pwm_b.start(0)
+        GPIO.setup(self.pwm_pin, GPIO.OUT)
+        GPIO.setup(self.dir_pin, GPIO.OUT)
+        self.pwm_speed = GPIO.PWM(self.pwm_pin, 500)
+        self.pwm_speed.start(0)
 
     def disable(self):
         self.enabled = False
@@ -57,15 +55,15 @@ class Motor:
     def set_forward(self):
         if (self.enabled):
             self.forwards = True
-            self.pwm_a.ChangeDutyCycle(self.speed*100)
-            self.pwm_b.ChangeDutyCycle(0)
+            GPIO.output(self.dir_pin, GPIO.LOW)
+            self.pwm_speed.ChangeDutyCycle(self.speed*100)
             self.rover.communication.send_telemetry({self.telemetry_id+self.forwards_telemetry_offset: int(True)})
 
     def set_backward(self):
         if (self.enabled):
             self.forwards = False
-            self.pwm_a.ChangeDutyCycle(0)
-            self.pwm_b.ChangeDutyCycle(self.speed*100)
+            GPIO.output(self.dir_pin, GPIO.HIGH)
+            self.pwm_speed.ChangeDutyCycle(self.speed*100)
             self.rover.communication.send_telemetry({self.telemetry_id+self.forwards_telemetry_offset: int(False)})
 
     def set_inverse_direction(self):
@@ -79,12 +77,12 @@ class Motor:
         if (self.enabled or override):
             self.speed = speed
             
-            if self.forwards:
-                self.pwm_a.ChangeDutyCycle(self.speed*100)
-                self.pwm_b.ChangeDutyCycle(0)
+            if self.forwards:   # remove if statment to clean up code
+                self.pwm_speed.ChangeDutyCycle(self.speed*100)
+                GPIO.output(self.dir_pin, GPIO.LOW)
             else:
-                self.pwm_a.ChangeDutyCycle(0)
-                self.pwm_b.ChangeDutyCycle(self.speed*100)
+                self.pwm_speed.ChangeDutyCycle(self.speed*100)
+                GPIO.output(self.dir_pin, GPIO.HIGH)
 
             self.rover.communication.send_telemetry({self.telemetry_id+self.speed_telemetry_offset: speed})
 
